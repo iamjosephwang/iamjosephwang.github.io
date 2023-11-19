@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>notice for java assessment | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Java Basicsstatically typed vs. dynamically typedJava is statically typed,which means the data type of variables in java are known and checked at compile time, before the program is executed.(vs. dyn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="notice for java assessment">
+<meta property="og:url" content="http://example.com/2023/10/20/notice-for-java-assessment/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java Basicsstatically typed vs. dynamically typedJava is statically typed,which means the data type of variables in java are known and checked at compile time, before the program is executed.(vs. dyn">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/java_primitive_type.png">
+<meta property="og:image" content="http://example.com/img/java_switch_case.png">
+<meta property="og:image" content="http://example.com/img/java_visibility_modifiers.png">
+<meta property="og:image" content="http://example.com/img/java_collections.png">
+<meta property="article:published_time" content="2023-10-20T08:06:15.000Z">
+<meta property="article:modified_time" content="2023-10-21T17:38:02.579Z">
+<meta property="article:author" content="Joseph Wang">
+<meta property="article:tag" content="COMPSCI4084">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/java_primitive_type.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-notice-for-java-assessment" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/10/20/notice-for-java-assessment/" class="article-date">
+  <time class="dt-published" datetime="2023-10-20T08:06:15.000Z" itemprop="datePublished">2023-10-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      notice for java assessment
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="Java-Basics"><a href="#Java-Basics" class="headerlink" title="Java Basics"></a>Java Basics</h3><h4 id="statically-typed-vs-dynamically-typed"><a href="#statically-typed-vs-dynamically-typed" class="headerlink" title="statically typed vs. dynamically typed"></a>statically typed vs. dynamically typed</h4><p>Java is <strong>statically typed</strong>,which means the data type of variables in java are known and checked at compile time, before the program is executed.(vs. dynamically typed language like python)<br>types of all variables must be declared(unlike python)<br>Local variables, class fields, method parameter and return values.</p>
+<p><strong>Variables cannot be redeclared with a different type</strong></p>
+<p><img src="/../img/java_primitive_type.png" alt="java primitive type"></p>
+<span id="more"></span>
+<h4 id="String-not-primitive-immutable"><a href="#String-not-primitive-immutable" class="headerlink" title="String - not primitive, immutable"></a>String - not primitive, immutable</h4><p>to store a value of type t1 in a variable of type t2, the value must be converted to t2 before the assignment occurs.</p>
+<h4 id="implicit-conversion-vs-explicit-conversion"><a href="#implicit-conversion-vs-explicit-conversion" class="headerlink" title="implicit conversion vs. explicit conversion"></a>implicit conversion vs. explicit conversion</h4><ol>
+<li><p>implicit(widening) conversion: precision may be lost, but magnitude of numeric value is preserved</p>
+</li>
+<li><p>explicit(narrow) conversions - casting: may cause        significant information loss(narrow conversions must be made explicit)</p>
+</li>
+<li><p>How does the cast work?<br> double to float: loss precision<br> out-of-range values become infinite<br> some non-zero values may become zero ⭐<br> Integer type to ‘smaller’ integer type:<br> discard all but n lowest-order bits(value mod max)</p>
+</li>
+</ol>
+<p>double&#x2F;float to long&#x2F;int&#x2F;short&#x2F;…<br>round-to-zero: fractional part of the value being removed</p>
+<h4 id="String-primitive-types"><a href="#String-primitive-types" class="headerlink" title="String &lt;-&gt; primitive types"></a>String &lt;-&gt; primitive types</h4><ol>
+<li>converting from Strings: use parseXXX methods</li>
+<li>convert to strings:String.valueOf() or use concatenate with an existing String-type variable</li>
+</ol>
+<h4 id="division-operator"><a href="#division-operator" class="headerlink" title="division operator:"></a>division operator:</h4><p>either of the component is floating-point, it  does floating division</p>
+<h4 id="scope-and-accessible"><a href="#scope-and-accessible" class="headerlink" title="scope and accessible"></a>scope and accessible</h4><p>Accessible w.r.t variable in scope: from the point of its declaration to the end of enclosing block</p>
+<h4 id="for-loop-vs-while-loop"><a href="#for-loop-vs-while-loop" class="headerlink" title="for loop vs. while loop"></a>for loop vs. while loop</h4><ol>
+<li><p>for loop contains 3 clauses:<br> intialization, termination condition check, variable update<br> termination check occurs before the loop executes</p>
+</li>
+<li><p>in the context of while loop, loop variable(the variable you use to control loop) is available before and after loop</p>
+</li>
+<li><p>advanced in loop:<br> what if you want to skip the rest of the loop execution:<br> what if you want to break out the entire loop workflow immediately:</p>
+</li>
+</ol>
+<h4 id="switch-statements"><a href="#switch-statements" class="headerlink" title="switch statements:"></a>switch statements:</h4><ol>
+<li>if: evaluates any boolean expression</li>
+<li>switch: evaluates integer(byte,short,int,….,char,enum) or String(one or more cases)<br><img src="/../img/java_switch_case.png" alt="java switch case vs. ifs"></li>
+</ol>
+<h4 id="method-in-java"><a href="#method-in-java" class="headerlink" title="method in java"></a>method in java</h4><ol>
+<li>A method has 6 components: access modifiers, return type, method name, parameter list, exception list, body</li>
+<li>Calling the method, use the name, passing parameters into the parentheses, store the return value (not need when method is void)</li>
+<li>It is possible to have two methods with same name as long as they have different parameter lists.(overloading)</li>
+</ol>
+<h4 id="Declaring-an-array"><a href="#Declaring-an-array" class="headerlink" title="Declaring an array:"></a>Declaring an array:</h4><ol>
+<li>each array has a type and a dimension</li>
+<li>String[] args and String args[] both make sense</li>
+<li>subscripts start at zero</li>
+<li>An array’s length cannot be changed after it is initialized.</li>
+<li>attempt to use an out-of-range index will occur an error</li>
+</ol>
+<h3 id="Object-and-Inheritance"><a href="#Object-and-Inheritance" class="headerlink" title="Object and Inheritance"></a>Object and Inheritance</h3><h4 id="Components-Variables-and-Methods"><a href="#Components-Variables-and-Methods" class="headerlink" title="Components - Variables and Methods"></a>Components - Variables and Methods</h4><p><strong>Three types of variable</strong></p>
+<ol>
+<li>local variables(defined within the method scope)</li>
+<li>method parameters(in method headers)</li>
+<li>member variables in a class - known as field</li>
+</ol>
+<h4 id="constructors"><a href="#constructors" class="headerlink" title="constructors"></a>constructors</h4><p>something like a method with <strong>the same name</strong> as the class<br>No return type specified<br>Sets up initial values for the data fields to initialise object state<br>Use <strong>this</strong> keyword to refer to the current object being created</p>
+<h4 id="visibility-modifiers"><a href="#visibility-modifiers" class="headerlink" title="visibility modifiers"></a>visibility modifiers</h4><p><img src="/../img/java_visibility_modifiers.png" alt="visibility modifiers in java"></p>
+<h4 id="getters-and-setters-give-controlled-acess-to-private-properties"><a href="#getters-and-setters-give-controlled-acess-to-private-properties" class="headerlink" title="getters and setters - give controlled acess to private properties."></a>getters and setters - give controlled acess to private properties.</h4><h4 id="Inheritance-in-java-a-class-can-have-only-one-superclass"><a href="#Inheritance-in-java-a-class-can-have-only-one-superclass" class="headerlink" title="Inheritance - in java, a class can have only one superclass"></a>Inheritance - in java, a class can have only one superclass</h4><p>What can you do in a subclass(Fields)<br>Use the inherited fields if they are not marked as private<br>Declare a field in the subclass with the same name as in the superclass(hiding parent field is not recommended)<br>Declare new fields.</p>
+<p>overriding a method means: implement a method with same signature in superclass but may have different behaviour</p>
+<h3 id="Abstract-final-interface"><a href="#Abstract-final-interface" class="headerlink" title="Abstract, final, interface"></a>Abstract, final, interface</h3><p><strong>final indicates that something is unchangeable or constant</strong></p>
+<h4 id="1-class-marked-as-final"><a href="#1-class-marked-as-final" class="headerlink" title="1.class marked as final"></a>1.class marked as final</h4><p><strong>for some security implication</strong><br>cannot be subclassed</p>
+<h4 id="2-final-variable"><a href="#2-final-variable" class="headerlink" title="2.final variable"></a>2.final variable</h4><ol>
+<li>final variable - <strong>can never be changed as long as being initialized</strong><br> you are highly recommended to name a final variable in a way that combines uppercase letters and underscores(to indicate it’s a constant)</li>
+<li>field declared by using final - the value can only be set at declaration time or in a constructor.</li>
+<li>final parameter - cannot be changed within a method<br><strong>static final variable</strong><br>create a constant that is associated with the class itself rather than with instance of class.</li>
+</ol>
+<h4 id="3-method-marked-as-final"><a href="#3-method-marked-as-final" class="headerlink" title="3.method marked as final"></a>3.method marked as final</h4><p>cannot be overriden or modified by other subclasses</p>
+<h4 id="4-class-marked-as-abstract"><a href="#4-class-marked-as-abstract" class="headerlink" title="4.class marked as abstract"></a>4.class marked as abstract</h4><ol>
+<li>must implement relevant abstract method in the subclass.</li>
+<li>if the subclass does not implement all the abstract method, it must also be marked as abstract.</li>
+<li>methods that must be overriden are also need to mark as abstract</li>
+</ol>
+<h4 id="5-interface-in-Java"><a href="#5-interface-in-Java" class="headerlink" title="5.interface in Java"></a>5.interface in Java</h4><p>interface represents class relationships outside the main heritance hierarchy</p>
+<p>Declared with the keyword <strong>‘interface’</strong>:</p>
+<ol>
+<li>all non-static methods are implicitly public abstract</li>
+<li>all fields are implicitly public static final</li>
+<li>comes after <strong>extends</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> week4.interface_example;</span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">calculate</span> &#123;</span><br><span class="line">    <span class="type">double</span> <span class="title function_">Area</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GeometricFigure</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> x, y;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">GeometricFigure</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.x = x;</span><br><span class="line">        <span class="built_in">this</span>.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getX</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getY</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Rectangular</span> <span class="keyword">extends</span> <span class="title class_">GeometricFigure</span> <span class="keyword">implements</span> <span class="title class_">calculate</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Rectangular</span><span class="params">(<span class="type">double</span> x_, <span class="type">double</span> y_)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(x_, y_);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">Area</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.getX() * <span class="built_in">this</span>.getY();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">InterfaceExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Rectangular</span> <span class="variable">gr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangular</span>(<span class="number">3.0</span>, <span class="number">4.0</span>);</span><br><span class="line">        System.out.println(gr.Area());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>you cannot directly create an instance of interface</p>
+<p><strong>Interface vs. abstract class</strong></p>
+<p>Interface:</p>
+<ol>
+<li>cannot be instantiated(<strong>like abstract class</strong>)</li>
+<li>has no constructor(<strong>abstract class can have constructor</strong>)</li>
+<li>All methods are public(<strong>methods can have any access modifier</strong>)</li>
+<li>Contain only constant fields(“<strong>constant and normal fields</strong>“)</li>
+<li>Classes can implement multiple interface(<strong>can have at most one parent class</strong>)</li>
+</ol>
+<h3 id="Collections-in-java"><a href="#Collections-in-java" class="headerlink" title="Collections in java"></a>Collections in java</h3><p><img src="/../img/java_collections.png" alt="java collection structure"></p>
+<p>Set, List, Queue, Deque, SortedMap…<br>Interfaces and implementations…</p>
+<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ArrayList</span> <span class="variable">strings</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">strings.add(<span class="string">&quot;Fuck&quot;</span>);</span><br><span class="line">strings.add(<span class="string">&quot;Glasow&quot;</span>);</span><br><span class="line">strings.add(<span class="string">&quot;Rainy&quot;</span>);</span><br><span class="line">strings.add(<span class="string">&quot;Days&quot;</span>);</span><br><span class="line"><span class="comment">//may lead to something like IndexOutOfBoundsException(Runtime Error)</span></span><br><span class="line"><span class="comment">//strings.add(7, &quot;foo&quot;);</span></span><br><span class="line"><span class="comment">//strings.set(7, &quot;foo&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Checking List contents</span></span><br><span class="line"><span class="keyword">if</span> (strings.contains(<span class="string">&quot;foo&quot;</span>)) &#123;</span><br><span class="line">    <span class="comment">//return true if contains the given element</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Return index of first occurance of element in list</span></span><br><span class="line"><span class="comment">//or -1 if it&#x27;s not there</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> strings.indexOf(<span class="string">&quot;Rainy&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Return index of last occurance of element in list</span></span><br><span class="line"><span class="comment">// or -1 if it&#x27;s not there</span></span><br><span class="line">strings.add(<span class="string">&quot;Rainy&quot;</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> string.lastIndexOf(<span class="string">&quot;Rainy&quot;</span>);</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="comment">//something about capacity and size</span></span><br><span class="line">strings.trimToSize();</span><br><span class="line"><span class="comment">//Ensure minimum capacity</span></span><br><span class="line">strings.ensureCapacity(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Generic-type"><a href="#Generic-type" class="headerlink" title="Generic type"></a>Generic type</h4><p>The type in the angle bracket(<strong>‘<type>‘</strong>) must be a class</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;<span class="type">int</span>&gt; intList; <span class="comment">//error</span></span><br><span class="line">List&lt;Integer&gt; intList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(); <span class="comment">//ok </span></span><br></pre></td></tr></table></figure>
+
+<p>automatically convert between primitive type and corresponding wrapper class</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Boxing and unboxing</span></span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; intList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">intList.add(<span class="number">5</span>);</span><br><span class="line">intList.add(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">value1</span> <span class="operator">=</span> intList.get(<span class="number">0</span>); <span class="comment">//integer -&gt; int</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">value2</span> <span class="operator">=</span> intList.get(<span class="number">1</span>) * <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Set-doesn’t-have-duplicate-elements"><a href="#Set-doesn’t-have-duplicate-elements" class="headerlink" title="Set doesn’t have duplicate elements"></a>Set doesn’t have duplicate elements</h4><p>Using a Set to find unique values</p>
+<h4 id="Map-doesn’t-have-duplicate-elements"><a href="#Map-doesn’t-have-duplicate-elements" class="headerlink" title="Map doesn’t have duplicate elements"></a>Map doesn’t have duplicate elements</h4><p>Use a Map to count word frequency</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MapExample</span> &#123;</span><br><span class="line">    <span class="comment">//....</span></span><br><span class="line">    Map&lt;String, Integer&gt; <span class="title function_">countWords</span><span class="params">(Collection&lt;String&gt; input)</span> &#123;</span><br><span class="line">        Map&lt;String, Integer&gt; result = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (String word : input) &#123;</span><br><span class="line">            <span class="type">Integer</span> <span class="variable">value</span> <span class="operator">=</span> result.get(word);   <span class="comment">//return type is integer</span></span><br><span class="line">            <span class="keyword">if</span> (value == <span class="literal">null</span>) &#123;</span><br><span class="line">                value=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            result.put(word, value+ <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>if you have declared the type in the angle bracket, you dont need to redeclare it when initializing it in the angle bracket.</p>
+<h4 id="Exceptions-in-Java"><a href="#Exceptions-in-Java" class="headerlink" title="Exceptions in Java"></a>Exceptions in Java</h4><p><strong>Unchecked Exceptions vs. Checked Exceptions</strong></p>
+<ol>
+<li><p>Unchecked Exceptions<br> do not need to be explicitly handled<br> like ArrayIndexOutOfBoundsException, NullPointerException</p>
+</li>
+<li><p>Checked Exceptions<br> Must be explicitly handled.</p>
+</li>
+</ol>
+<p><strong>Ways of handling exceptions</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//code that might throw Exception</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(Exception ex) &#123;</span><br><span class="line">    <span class="comment">//deal with it</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">//clean up</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="equals-vs-hashCode"><a href="#equals-vs-hashCode" class="headerlink" title="equals() vs. hashCode()"></a>equals() vs. hashCode()</h4><p>if you override equals(), you must also override hashCode()<br>otherwise, it may not run correctly as you expected.</p>
+<h4 id="Enumerated-types"><a href="#Enumerated-types" class="headerlink" title="Enumerated types"></a>Enumerated types</h4><p>An enum type is a special data type that allows a variable to be one of a set of predefined constants.</p>
+<p>values are constants &#x3D;&gt; conventioanlly written in ALL_CAPS<br>enum types in java have constructors</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/10/20/notice-for-java-assessment/" data-id="clp635lpi000sbgfwa72e00xu" data-title="notice for java assessment" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/COMPSCI4084/" rel="tag">COMPSCI4084</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/10/22/notice-for-idss-week4-optimization/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          notice for idss week4 - optimization
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/10/15/My-solution-for-UofG-23Fall-COMPSCI5100-week2-lab/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">My solution for UofG 23Fall COMPSCI5100 week2 lab</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-2023tutorial/">-Programming -2023tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-Programming/" rel="tag">-c++ -Programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">-deep learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm-Leetcode-Graph-Problems/" rel="tag">Algorithm, Leetcode, Graph Problems</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/COMPSCI4084/" rel="tag">COMPSCI4084</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Introduction-to-data-science-and-system/" rel="tag">Introduction to data science and system</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning-from-scratch/" rel="tag">learning from scratch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-Programming/" style="font-size: 10px;">-c++ -Programming</a> <a href="/tags/deep-learning/" style="font-size: 10px;">-deep learning</a> <a href="/tags/Algorithm-Leetcode-Graph-Problems/" style="font-size: 10px;">Algorithm, Leetcode, Graph Problems</a> <a href="/tags/COMPSCI4084/" style="font-size: 10px;">COMPSCI4084</a> <a href="/tags/Introduction-to-data-science-and-system/" style="font-size: 10px;">Introduction to data science and system</a> <a href="/tags/Machine-Learning/" style="font-size: 15px;">Machine Learning</a> <a href="/tags/learning-from-scratch/" style="font-size: 20px;">learning from scratch</a> <a href="/tags/machine-learning/" style="font-size: 15px;">machine learning</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/19/notice-for-5089-past-exam-paper/">notice for 5089 past exam paper</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/24/notice-for-idss-week5-optimization2/">notice for idss week5 optimization2</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/22/notice-for-idss-week4-optimization/">notice for idss week4 - optimization</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/20/notice-for-java-assessment/">notice for java assessment</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Joseph Wang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

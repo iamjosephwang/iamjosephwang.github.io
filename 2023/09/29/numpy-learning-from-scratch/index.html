@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>numpy learning from scratch | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1.Why is Numpy Faster Fixed type - Faster to read less bytes of memory for example, an Integer ‘5’ stored by using numpy(by defaultion) can only occupy a 32-bit piece of memory Otherwise, in list, yo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numpy learning from scratch">
+<meta property="og:url" content="http://example.com/2023/09/29/numpy-learning-from-scratch/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.Why is Numpy Faster Fixed type - Faster to read less bytes of memory for example, an Integer ‘5’ stored by using numpy(by defaultion) can only occupy a 32-bit piece of memory Otherwise, in list, yo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/slicing-vs-indexing.png">
+<meta property="og:image" content="http://example.com/img/stack_vs_conatenate_basics1.png">
+<meta property="og:image" content="http://example.com/img/column_stack-vs-row_stack.png">
+<meta property="og:image" content="http://example.com/img/hsplit-vs-vsplit.png">
+<meta property="og:image" content="http://example.com/img/something%20more%20complex%20about%20split.png">
+<meta property="article:published_time" content="2023-09-29T20:25:36.000Z">
+<meta property="article:modified_time" content="2023-10-05T12:22:02.236Z">
+<meta property="article:author" content="Joseph Wang">
+<meta property="article:tag" content="machine learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/slicing-vs-indexing.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-numpy-learning-from-scratch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/29/numpy-learning-from-scratch/" class="article-date">
+  <time class="dt-published" datetime="2023-09-29T20:25:36.000Z" itemprop="datePublished">2023-09-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      numpy learning from scratch
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="1-Why-is-Numpy-Faster"><a href="#1-Why-is-Numpy-Faster" class="headerlink" title="1.Why is Numpy Faster"></a>1.Why is Numpy Faster</h2><ol>
+<li>Fixed type - <strong>Faster to read less bytes of memory</strong><br> for example, an Integer ‘5’ stored by using numpy(by defaultion) can only occupy a 32-bit piece of memory<br> Otherwise, in list, your variable is expected to consists of 4 different things.</li>
+<li>size</li>
+<li>reference count</li>
+<li>object type</li>
+<li>object value</li>
+</ol>
+<p> And we don’t really need to do type checking each time when we’re iterating through each item in a numpy array.</p>
+<ol start="2">
+<li>Numpy uses contiguous memory<br>  as data stored in numpy array has adopted contiguous memory, we could benefit a great deal when data processing(using SIMD(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">Single instruction, multiple data</a>)), and benefit from effective cache utilization.</li>
+</ol>
+<h2 id="2-Basics"><a href="#2-Basics" class="headerlink" title="2.Basics"></a>2.Basics</h2><p>Numpy’s main object is a table of a table of elements (usually numbers), all of the same type, indexed by a tuple of non-negative integers. it is the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/NumPy">homogeneous multidimensional array</a></p>
+<h3 id="2-1-axis-in-numpy"><a href="#2-1-axis-in-numpy" class="headerlink" title="2.1 axis in numpy"></a>2.1 axis in numpy</h3><h3 id="2-2-‘mutable’-in-numpy-array"><a href="#2-2-‘mutable’-in-numpy-array" class="headerlink" title="2.2 ‘mutable’ in numpy array"></a>2.2 ‘mutable’ in numpy array</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">arr = np.array([<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]) <span class="comment">#Numpy&#x27;s array</span></span><br><span class="line">new_arr = np.array(arr) </span><br><span class="line"><span class="comment">#numpy array is mutable, we need to explicitly make of a copy of it</span></span><br><span class="line">new_arr_copy = arr.copy() <span class="comment">#same as above</span></span><br><span class="line">arr_1 = arr        <span class="comment">#it doesn&#x27;t work</span></span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(arr_1) <span class="comment">##output: [1,6,7,8]</span></span><br><span class="line"><span class="built_in">print</span>(new_arr)<span class="comment">##output: [5,6,7,8]</span></span><br><span class="line"><span class="built_in">print</span>(new_arr_copy)<span class="comment">##output [5,6,7,8]</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-3-need-to-obey-‘Rectangular’-rule-in-creation-of-numpy-array"><a href="#2-3-need-to-obey-‘Rectangular’-rule-in-creation-of-numpy-array" class="headerlink" title="2.3 need to obey ‘Rectangular’ rule in creation of numpy array"></a>2.3 need to obey ‘Rectangular’ rule in creation of numpy array</h3><h3 id="2-4-something-helpful-when-specifying-values-in-numpy-array"><a href="#2-4-something-helpful-when-specifying-values-in-numpy-array" class="headerlink" title="2.4 something helpful when specifying values in numpy array"></a>2.4 something helpful when specifying values in numpy array</h3><p>see something enlighting below:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">arr_1 = np.ones((<span class="number">5</span>, <span class="number">8</span>)) <span class="comment">#create a 5x8 matrix with all values equal to 1</span></span><br><span class="line">arr_2 = np.zeros((<span class="number">5</span>, <span class="number">8</span>)) <span class="comment">##create a 5x8 matrix with all values equal to 0</span></span><br><span class="line">value = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;specify the value&quot;</span>))</span><br><span class="line">arr_3 = np.full(value, (<span class="number">5</span>, <span class="number">8</span>)) </span><br><span class="line"></span><br><span class="line"><span class="comment">#use np.random </span></span><br><span class="line">arr_4 = np.random.randint(start,end, (<span class="number">5</span>,<span class="number">8</span>)) <span class="comment">#create a 5x8 matrix with all same random value between start and end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-5-np-arange-start-end-step-something-like-built-in-range-in-python"><a href="#2-5-np-arange-start-end-step-something-like-built-in-range-in-python" class="headerlink" title="2.5 np.arange(start,end,step) - something like built-in range() in python"></a>2.5 np.arange(start,end,step) - something like built-in range() in python</h3><h3 id="2-6-loading-and-saving-arrays"><a href="#2-6-loading-and-saving-arrays" class="headerlink" title="2.6 loading and saving arrays"></a>2.6 loading and saving arrays</h3><p>I&#x2F;O with arrays is a critical part of any numerical computation system. numpy lib provide powerful ways of storing and recalling arrays.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">##turn off scientific notation, so the output looks sensible</span></span><br><span class="line">np.set_printoptions(suppress=<span class="literal">True</span>)</span><br><span class="line">sunspots = np.loadtxt(<span class="string">&quot;sunspots.csv&quot;</span>, delimiter=<span class="string">&quot;,&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-7-slicing-vs-indexing-in-numpy-arrays"><a href="#2-7-slicing-vs-indexing-in-numpy-arrays" class="headerlink" title="2.7 slicing vs. indexing in numpy arrays"></a>2.7 slicing vs. indexing in numpy arrays</h3><p>tedious yet complicated. we use built-in something like array name and brackets to implement the same thing.</p>
+<ol>
+<li><strong>Slicing</strong> does not change the rank of an array. It selects a rectangular subset with the same number of dimensions</li>
+</ol>
+<p>The ‘rank’ of matrix indicates the dimension of the vector space that generated by its columns.<br>2. <strong>Indexing</strong>: reduce the rank of an array(usually). It selects a rectangular subset where one dimension is a singleton, and removes that dimension.</p>
+<p>see something enlightening below:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">test_arr = np.random.randint(<span class="number">1</span>,<span class="number">10</span>, (<span class="number">4</span>,<span class="number">2</span>)) <span class="comment">##create a 4x2 matrix with all values equal to 1.</span></span><br><span class="line"><span class="built_in">print</span>(test_arr[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(test_arr[<span class="number">0</span>].shape) <span class="comment">##Indexing: this&#x27;ll reduce the rank of test_arr, output: (2,)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(test_arr[<span class="number">0</span>:<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(test_arr[<span class="number">0</span>:<span class="number">1</span>].shape)</span><br></pre></td></tr></table></figure>
+<p><img src="/../img/slicing-vs-indexing.png" alt="output for &#39;indexing vs. slicing&#39;"></p>
+<h3 id="2-8-Transposition-in-numpy-using-x-T"><a href="#2-8-Transposition-in-numpy-using-x-T" class="headerlink" title="2.8 Transposition in numpy using x.T"></a>2.8 Transposition in numpy using x.T</h3><p>pytorch has the similar method. quite useful when doing forward propagation</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">tensor = np.zeros((<span class="number">10</span>,<span class="number">5</span>,<span class="number">60</span>,<span class="number">2</span>))</span><br><span class="line">tensor_T = tensor.T</span><br><span class="line"><span class="built_in">print</span>(tensor_T.shape) <span class="comment">###output: (2,60,5,10)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-9-stack-and-concatenate-in-numpy"><a href="#2-9-stack-and-concatenate-in-numpy" class="headerlink" title="2.9 stack and concatenate in numpy"></a>2.9 stack and concatenate in numpy</h3><p>use <strong>concatenate</strong> to join along an existing dimension<br>and <strong>stack</strong> to stack up arrays along a new dimension</p>
+<p>see something enlightening below:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">y = np.array([<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.stack([x,y]))</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(np.concatenate([x,y]))</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line">x_new = np.zeros((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">y_new = np.ones((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#explicitly specify which axis to join</span></span><br><span class="line"><span class="built_in">print</span>(np.concatenate([x_new, y_new], axis=<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(np.concatenate([x_new, y_new], axis=<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/../img/stack_vs_conatenate_basics1.png" alt="output for stack and concatenate method"></p>
+<p>note that it’s wise to pay more attention to brackets when dealing with axis in tensor manipulation </p>
+<p>There are three stack-like method with similar function as mentioned above:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x_test = np.zeros((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">y_test = np.ones((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.hstack([x_test,y_test])) </span><br><span class="line"><span class="comment">##stack horizontally, same as np.concatenate([x_test, y_test], axis=1)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.vstack([x_test, y_test]))</span><br><span class="line"><span class="comment">#stack vertically, same as np.concatenate([x_test, y_test], axis=1) </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.dstack([x_test, y_test]))</span><br><span class="line"><span class="comment">#actually, I&#x27; not sure what&#x27;s going on with the method</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>The column_stack() and row_stack() method can also be used for stacking those one-dimension arrays to form a new two-dimension array</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>])</span><br><span class="line">b = np.array([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">c = np.array([<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>])</span><br><span class="line">np.column_stack((a, b, c))</span><br><span class="line">np.row_stack((a, b, c))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/column_stack-vs-row_stack.png" alt="column_stack vs. row_stack"></p>
+<h3 id="2-10-splitting-Arrays-hsplit-vs-vsplit"><a href="#2-10-splitting-Arrays-hsplit-vs-vsplit" class="headerlink" title="2.10 splitting Arrays - hsplit() vs. vsplit()"></a>2.10 splitting Arrays - hsplit() vs. vsplit()</h3><p>take hsplit() for instance, the hsplit() takes two arguments, first one is an array-like object, second one indicates that we divide the array-like object into N parts.<br>and hsplit() indicates that we’ll split the array-like object into pieces with axis&#x3D;1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">A = np.arange(<span class="number">16</span>).reshape((<span class="number">4</span>,<span class="number">4</span>))</span><br><span class="line"><span class="built_in">print</span>(A)</span><br><span class="line"><span class="comment">#with axis = 1</span></span><br><span class="line">[B, C] = np.hsplit(A, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(B)</span><br><span class="line"><span class="built_in">print</span>(C)</span><br><span class="line"></span><br><span class="line"><span class="comment">#with axis = 0</span></span><br><span class="line">[B, C] = np.vsplit(A, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(B)</span><br><span class="line"><span class="built_in">print</span>(C)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/../img/hsplit-vs-vsplit.png" alt="hsplit vs. vsplit"></p>
+<p><strong>something more complex</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">A = np.arange(<span class="number">16</span>).reshape((<span class="number">4</span>,<span class="number">4</span>))</span><br><span class="line"><span class="built_in">print</span>(A)</span><br><span class="line"></span><br><span class="line">[A1, A2, A3] = np.split(A, [<span class="number">1</span>, <span class="number">3</span>], axis=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(A1)</span><br><span class="line"><span class="built_in">print</span>(A2)</span><br><span class="line"><span class="built_in">print</span>(A3)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/../img/something%20more%20complex%20about%20split.png" alt="something more complex about split()"></p>
+<h3 id="2-11-ways-of-iterating-an-array-like-object"><a href="#2-11-ways-of-iterating-an-array-like-object" class="headerlink" title="2.11 ways of iterating an array-like object"></a>2.11 ways of iterating an array-like object</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">A = np.arange(<span class="number">20</span>,<span class="number">29</span>).reshape((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">for row in A:</span></span><br><span class="line"><span class="string">  print(row)</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> A.flat:</span><br><span class="line">  <span class="built_in">print</span>(item) <span class="comment"># we use for-loop on A.flat to make an iteration element by element</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##apply_along_axis() takes three argument: aggregate function, the axis on which the iteration will be applied, and the array-like object</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(np.apply_along_axis(np.mean, axis = <span class="number">0</span>, arr=A)) <span class="comment">#[23. 24. 25.]</span></span><br><span class="line"><span class="built_in">print</span>(np.apply_along_axis(np.mean, axis = <span class="number">1</span>, arr=A)) <span class="comment">#[21. 24. 25.]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-12-Reading-and-Writing-Array-Data-on-files"><a href="#2-12-Reading-and-Writing-Array-Data-on-files" class="headerlink" title="2.12 Reading and Writing Array Data on files"></a>2.12 Reading and Writing Array Data on files</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">x = np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Original array:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line">header = <span class="string">&#x27;col1 col2 col3 col4&#x27;</span></span><br><span class="line">np.savetxt(<span class="string">&quot;temp.txt&quot;</span>, x, fmt = <span class="string">&quot;%d&quot;</span>, header=header)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;After loading:&quot;</span>)</span><br><span class="line">result = np.loadtxt(<span class="string">&quot;temp.txt&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"><span class="built_in">print</span>(result.dtype)  <span class="comment">##float64</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="species-binary-exposure-weeks-humidity-temperature-deg-C-n-deaths-n-snails"><a href="#species-binary-exposure-weeks-humidity-temperature-deg-C-n-deaths-n-snails" class="headerlink" title="species(binary) exposure(weeks) humidity(%) temperature(deg. C) n_deaths n_snails"></a>species(binary) exposure(weeks) humidity(%) temperature(deg. C) n_deaths n_snails</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/29/numpy-learning-from-scratch/" data-id="clp635lph000pbgfwcif57qfk" data-title="numpy learning from scratch" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/10/02/learning-from-scratch-2023-10-02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          learning from scratch 2023-10-02
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/09/29/My-solution-for-UofG-23Fall-COMPSCI5100-week1-lab/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">My solution for UofG 23Fall COMPSCI5100 week1 lab</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-2023tutorial/">-Programming -2023tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-Programming/" rel="tag">-c++ -Programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">-deep learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm-Leetcode-Graph-Problems/" rel="tag">Algorithm, Leetcode, Graph Problems</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/COMPSCI4084/" rel="tag">COMPSCI4084</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Introduction-to-data-science-and-system/" rel="tag">Introduction to data science and system</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning-from-scratch/" rel="tag">learning from scratch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-Programming/" style="font-size: 10px;">-c++ -Programming</a> <a href="/tags/deep-learning/" style="font-size: 10px;">-deep learning</a> <a href="/tags/Algorithm-Leetcode-Graph-Problems/" style="font-size: 10px;">Algorithm, Leetcode, Graph Problems</a> <a href="/tags/COMPSCI4084/" style="font-size: 10px;">COMPSCI4084</a> <a href="/tags/Introduction-to-data-science-and-system/" style="font-size: 10px;">Introduction to data science and system</a> <a href="/tags/Machine-Learning/" style="font-size: 15px;">Machine Learning</a> <a href="/tags/learning-from-scratch/" style="font-size: 20px;">learning from scratch</a> <a href="/tags/machine-learning/" style="font-size: 15px;">machine learning</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/19/notice-for-5089-past-exam-paper/">notice for 5089 past exam paper</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/24/notice-for-idss-week5-optimization2/">notice for idss week5 optimization2</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/22/notice-for-idss-week4-optimization/">notice for idss week4 - optimization</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/20/notice-for-java-assessment/">notice for java assessment</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Joseph Wang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>notice for idss week4 - optimization | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Overview what an objective function, constraint function and a parameter vector is in the context of optimisation how to play the piano the difference between discrete and continuous optimisation con">
+<meta property="og:type" content="article">
+<meta property="og:title" content="notice for idss week4 - optimization">
+<meta property="og:url" content="http://example.com/2023/10/22/notice-for-idss-week4-optimization/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Overview what an objective function, constraint function and a parameter vector is in the context of optimisation how to play the piano the difference between discrete and continuous optimisation con">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-22T21:57:47.000Z">
+<meta property="article:modified_time" content="2023-10-24T23:13:06.945Z">
+<meta property="article:author" content="Joseph Wang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-notice-for-idss-week4-optimization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/10/22/notice-for-idss-week4-optimization/" class="article-date">
+  <time class="dt-published" datetime="2023-10-22T21:57:47.000Z" itemprop="datePublished">2023-10-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      notice for idss week4 - optimization
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><ul>
+<li>what an objective function, constraint function and a parameter vector is in the context of optimisation</li>
+<li>how to play the piano</li>
+<li>the difference between discrete and continuous optimisation</li>
+<li>convex and nonconvex optimisation and how to recognise them</li>
+<li>what constrained optimisation is and the difference between soft and hard constraints</li>
+<li>key properties of objective functions, including convexity and continuity</li>
+<li>basic uses of optimisation and how to come up with objective functions</li>
+<li>what linear least squares is</li>
+<li>how iterative optimisation works</li>
+<li>the principles of heuristic optimisation</li>
+<li>the properties of random search, with the metaheuristics: locality, memory, temperature and population</li>
+</ul>
+<h4 id="1-objective-function-constraint-function-parameter-vector-in-optimisation"><a href="#1-objective-function-constraint-function-parameter-vector-in-optimisation" class="headerlink" title="1. objective function, constraint function, parameter vector in optimisation"></a>1. objective function, constraint function, parameter vector in optimisation</h4><p>in computer science, we want to achieve automatic optimisation by using algorithm.<br>There are no exact special cases for every real problem. we’re highly recommended to formulate our problems and then apply relevant algorithm.</p>
+<ol>
+<li>my vision w.r.t <strong>parameter vector</strong> is something like a set of configuration to make our model achieve better performance.</li>
+<li><strong>objective function</strong> is one way we use to measure the performance of data(like loss function in ML).Generally, the output of objective function is a single scalar.<br> basically, our work is to find a set of configuration of parameters to minimise our objection function.</li>
+<li><strong>constraint function</strong> indicates something like we set some restrictions on the possible parameter vector.</li>
+</ol>
+<p>Anyway, optimisation is expensive in most cases for various reasons.</p>
+<h4 id="2-Continuous-optimisation-vs-Discrete-optimisation"><a href="#2-Continuous-optimisation-vs-Discrete-optimisation" class="headerlink" title="2. Continuous optimisation vs. Discrete optimisation"></a>2. Continuous optimisation vs. Discrete optimisation</h4><ol>
+<li><p>Continuous optimisation: search a continuous vector space to find the point where the output of objective function is the smallest.<br> focus on iterative, approximate optimisation</p>
+</li>
+<li><p><strong>Gometric median</strong><br> median: the vector that minimises the sum of distances to all vectors in the dataset.<br> it’s enlightening to understand why we get series of (x,y) pairs in the coordinate in the process of optimisation.</p>
+</li>
+</ol>
+<p> got a good point of view w.r.t real-world problem.</p>
+<p> <strong>Problem: Optimal Cell Tower Placement</strong><br> In the field of telecommunications and network infrastructure planning, one common optimization problem is the optimal placement of cell towers or base stations to provide cellular coverage to a given area while minimizing deployment costs and ensuring efficient network performance.</p>
+<h4 id="3-hard-constraints-vs-soft-constraints"><a href="#3-hard-constraints-vs-soft-constraints" class="headerlink" title="3. hard constraints vs. soft constraints"></a>3. hard constraints vs. soft constraints</h4><ol>
+<li><p><strong>hard constraints</strong>: use an optimisation algorithm that supports hard constraints inherently. the constraints will be specified as a convex or rectangular region of the space.<br> Pros and Cons.</p>
+</li>
+<li><p><strong>soft constraints</strong>: apply penalties to objective function to discourage solutions that violate the constraints.<br> <strong>egregiously</strong>:in an outstandingly, bad way<br> Pros and Cons.</p>
+</li>
+<li><p><strong>Relaxation of objective functions</strong><br> It can be hard to solve discrete optimisation and constrained optimisation problems efficiently. algorithms try to find similar continuous or unconstrained optimisation problems and solve instead.That is, relaxation.</p>
+</li>
+</ol>
+<h4 id="4-properties-of-objective-function"><a href="#4-properties-of-objective-function" class="headerlink" title="4.properties of objective function"></a>4.properties of objective function</h4><ol>
+<li>convexity: we want to find the global minimum</li>
+<li>continuity:</li>
+</ol>
+<h4 id="5-Algorithm"><a href="#5-Algorithm" class="headerlink" title="5.Algorithm"></a>5.Algorithm</h4><ol>
+<li><p><strong>Direct convex optimisation - least squares</strong></p>
+</li>
+<li><p><strong>Iterative optimisation</strong>:<br> somthing like: during the iteration:</p>
+</li>
+<li><p>adjust the paramter</p>
+</li>
+<li><p>evaluate objective function</p>
+</li>
+<li><p>if better solution found, record it.</p>
+</li>
+<li><p><strong>Regular search: grid search</strong></p>
+</li>
+<li><p>something like we divide multidimensional space into groups(in 1-D, linear segments, in 2-D, some rectangular regions, and in 3-D some cubes)</p>
+</li>
+<li><p>during the beginning of iteration, we may get several points from different divided groups. but as the iteration goes ahead,finally, in most cases, there’s<br> only one point left.</p>
+</li>
+<li><p>density of grid search:<br> note that if our objective function is not very smooth, a much denser grid would be required to catch the minima.</p>
+</li>
+<li><p><strong>hyperparameters:</strong> affect the way in which the optimiser finds a solution</p>
+</li>
+<li><p><strong>Simple stochastic - random search</strong></p>
+</li>
+<li><p><strong>better than grid search, almost always</strong> That is so impressive! lol</p>
+</li>
+<li><p><strong>Metaheuristics</strong>: i have no idea. seems that can be used to improve random search</p>
+</li>
+<li><p>Locality:</p>
+</li>
+<li><p>depending on initial conditions.</p>
+</li>
+<li><p>may become traped in local w</p>
+</li>
+<li><p><strong>Hill climbing - local search</strong>: can easily get stuck in the local minima<br>* ways that the hill climbing can be tweaked.</p>
+</li>
+<li><p><strong>Temperature</strong></p>
+</li>
+<li><p>avoid always downhill and stuck in the minima </p>
+</li>
+<li><p>Population</p>
+</li>
+<li><p>Memory</p>
+</li>
+</ol>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/10/22/notice-for-idss-week4-optimization/" data-id="clp635lpg000mbgfw71hj6te9" data-title="notice for idss week4 - optimization" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/10/24/notice-for-idss-week5-optimization2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          notice for idss week5 optimization2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/10/20/notice-for-java-assessment/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">notice for java assessment</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-2023tutorial/">-Programming -2023tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-Programming/" rel="tag">-c++ -Programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">-deep learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm-Leetcode-Graph-Problems/" rel="tag">Algorithm, Leetcode, Graph Problems</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/COMPSCI4084/" rel="tag">COMPSCI4084</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Introduction-to-data-science-and-system/" rel="tag">Introduction to data science and system</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning-from-scratch/" rel="tag">learning from scratch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-Programming/" style="font-size: 10px;">-c++ -Programming</a> <a href="/tags/deep-learning/" style="font-size: 10px;">-deep learning</a> <a href="/tags/Algorithm-Leetcode-Graph-Problems/" style="font-size: 10px;">Algorithm, Leetcode, Graph Problems</a> <a href="/tags/COMPSCI4084/" style="font-size: 10px;">COMPSCI4084</a> <a href="/tags/Introduction-to-data-science-and-system/" style="font-size: 10px;">Introduction to data science and system</a> <a href="/tags/Machine-Learning/" style="font-size: 15px;">Machine Learning</a> <a href="/tags/learning-from-scratch/" style="font-size: 20px;">learning from scratch</a> <a href="/tags/machine-learning/" style="font-size: 15px;">machine learning</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/19/notice-for-5089-past-exam-paper/">notice for 5089 past exam paper</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/24/notice-for-idss-week5-optimization2/">notice for idss week5 optimization2</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/22/notice-for-idss-week4-optimization/">notice for idss week4 - optimization</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/20/notice-for-java-assessment/">notice for java assessment</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Joseph Wang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Joseph Wang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-learning-from-scratch-2023-09-26" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/26/learning-from-scratch-2023-09-26/" class="article-date">
+  <time class="dt-published" datetime="2023-09-26T18:35:48.000Z" itemprop="datePublished">2023-09-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/26/learning-from-scratch-2023-09-26/">learning from scratch-2023.09.26</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="2023-09-26-Glasgow"><a href="#2023-09-26-Glasgow" class="headerlink" title="2023.09.26 Glasgow"></a>2023.09.26 Glasgow</h2><h3 id="Fuck-glasgow-rainy-days"><a href="#Fuck-glasgow-rainy-days" class="headerlink" title="Fuck glasgow rainy days!"></a>Fuck glasgow rainy days!</h3><p>I’m working on my python programming courses. python has powerful yet complicated I&#x2F;O functions. puzzled me a lot.</p>
+<p>And command line argument can provide helpful information for coding and debugging.</p>
+<h3 id="Command-Line-Arguments"><a href="#Command-Line-Arguments" class="headerlink" title="Command Line Arguments"></a>Command Line Arguments</h3><h4 id="The-sys-module-and-sys-argv-0"><a href="#The-sys-module-and-sys-argv-0" class="headerlink" title="The sys module and sys.argv[0]"></a>The sys module and sys.argv[0]</h4><p>When the programme is executed, those command line arguments are stored in a vector called argv that resides in <strong>sys</strong><br>In that case, to employ the vector, you should firstly:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure>
+<p>find more about the module ‘sys’ <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/sys.html">here</a><br>seems we can have more access to interact with our python interpreter by using this module.</p>
+<p>the first element of the vector <strong>‘sys.argv’</strong> is the name of programme itself.<br>by using <strong>sys.argv[0]</strong>, we can get the file name(something like xxx.py)</p>
+<h4 id="Functions-that-can-be-used-with-sys-argv"><a href="#Functions-that-can-be-used-with-sys-argv" class="headerlink" title="Functions that can be used with sys.argv"></a>Functions that can be used with sys.argv</h4><ol>
+<li><strong>len()</strong> - by using it, we can count the number of arguments passed to the command line.</li>
+<li><strong>str()</strong> - by using it, we can resent the vector as a string vector and  make displaying the command line vector easier and better.</li>
+</ol>
+<p>see something enlightening below:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#in test.py, imagine we have 4 arguments to pass</span></span><br><span class="line"><span class="comment">#...</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;This is the name of the programme:&quot;</span>, sys.argv[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Number of elements excluding the name of the programme:&quot;</span>, <span class="built_in">len</span>(sys.argv) - <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Argument List:&quot;</span>, <span class="built_in">str</span>(sys.argv))</span><br><span class="line"></span><br><span class="line"><span class="comment">##input: python test.py 1 2 3 4</span></span><br><span class="line"><span class="comment">##output</span></span><br><span class="line"><span class="comment">## This is the name of the programme:test.py</span></span><br><span class="line"><span class="comment">## Number of elements excluding the name of the programme:4</span></span><br><span class="line"><span class="comment">## Argument List: [&#x27;test.py&#x27;, &#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;]</span></span><br></pre></td></tr></table></figure>
+<h3 id="Exception-in-python"><a href="#Exception-in-python" class="headerlink" title="Exception in python"></a>Exception in python</h3><p>In my practice with respect to <strong>‘I&#x2F;O manipulation in python’</strong>, I try to use <strong>‘try, except’</strong> pairs to make my code throw exception when there’s no existing <strong>‘.csv file’</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">display_csv_records</span>(<span class="params">filename</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;r&#x27;</span>, newline=<span class="string">&#x27;&#x27;</span>) <span class="keyword">as</span> csvfile:</span><br><span class="line">            <span class="keyword">for</span> row <span class="keyword">in</span> csvfile:</span><br><span class="line">                <span class="built_in">print</span>(row)</span><br><span class="line">        csvfile.close()</span><br><span class="line">    <span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;The file &#x27;<span class="subst">&#123;filename&#125;</span>&#x27; does not exist.&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>Exceptions are those errors that the user can make. By default a Python programme will crash when an exception occurs.<br>In that case, it’s wise for us to indicate where an exception might occur in order to catch it.<br>We deploy the movement of <strong>‘throwing exceptions’</strong> by using <strong>‘try, except’</strong> pair<br>The code that might cause an exception that we want to catch is placed inside the <strong>‘try’</strong> block</p>
+<p>When an exception occurs inside a try block, execution immediately jump to <strong>‘except’</strong> block. In my practice, we the .csv file cannot be find in the specified directory, the execution will jump to throw <strong>‘FileNotFoundError’</strong></p>
+<h2 id="I-hope-that-each-day’s-accumulation-will-eventually-turn-into-the-strength-I-need-to-further-my-academic-endeavors"><a href="#I-hope-that-each-day’s-accumulation-will-eventually-turn-into-the-strength-I-need-to-further-my-academic-endeavors" class="headerlink" title="I hope that each day’s accumulation will eventually turn into the strength I need to further my academic endeavors."></a>I hope that each day’s accumulation will eventually turn into the strength I need to further my academic endeavors.</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/26/learning-from-scratch-2023-09-26/" data-id="clp635lpd000dbgfwb41i4j8z" data-title="learning from scratch-2023.09.26" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning-from-scratch/" rel="tag">learning from scratch</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="custom-layout-Learning-ML-from-scratch" class="h-entry article article-type-custom-layout" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/20/Learning-ML-from-scratch/" class="article-date">
+  <time class="dt-published" datetime="2023-09-20T19:23:30.000Z" itemprop="datePublished">2023-09-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/20/Learning-ML-from-scratch/">Learning ML from scratch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <!-- Add the MathJax script within your blog post -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<hr>
+<h2 id="Unit1-Regression"><a href="#Unit1-Regression" class="headerlink" title="Unit1 Regression"></a>Unit1 Regression</h2><h3 id="2-Polynomial-Regression"><a href="#2-Polynomial-Regression" class="headerlink" title="2.Polynomial Regression"></a>2.Polynomial Regression</h3><p>overview of this part</p>
+<ol>
+<li>More general form of linear regression - implement our linear model in vector form</li>
+<li>More general formulation</li>
+<li>Making predictions</li>
+<li>Generalisation, overfitting, cross-validation
+        
+          <p class="article-more-link">
+            <a href="/2023/09/20/Learning-ML-from-scratch/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/20/Learning-ML-from-scratch/" data-id="clp635lp30000bgfw4bfx5whg" data-title="Learning ML from scratch" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ML-learning-from-scratch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/15/ML-learning-from-scratch/" class="article-date">
+  <time class="dt-published" datetime="2023-09-15T10:25:54.000Z" itemprop="datePublished">2023-09-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/09/15/ML-learning-from-scratch/">ML learning from scratch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <!-- Add the MathJax script within your blog post -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<hr>
+<h2 id="Unit1-Regression"><a href="#Unit1-Regression" class="headerlink" title="Unit1 Regression"></a>Unit1 Regression</h2><h3 id="2-Polynomial-Regression"><a href="#2-Polynomial-Regression" class="headerlink" title="2.Polynomial Regression"></a>2.Polynomial Regression</h3><p>overview of this part</p>
+<ol>
+<li>More general form of linear regression - implement our linear model in vector form</li>
+<li>More general formulation</li>
+<li>Making predictions</li>
+<li>Generalisation, overfitting, cross-validation
+        
+          <p class="article-more-link">
+            <a href="/2023/09/15/ML-learning-from-scratch/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/09/15/ML-learning-from-scratch/" data-id="clp635lp90003bgfwdtqkbbvo" data-title="ML learning from scratch" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-My-Machine-Learning-Notebook" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/29/My-Machine-Learning-Notebook/" class="article-date">
+  <time class="dt-published" datetime="2023-08-29T17:39:50.000Z" itemprop="datePublished">2023-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/08/29/My-Machine-Learning-Notebook/">My-Machine-Learning-Notebook</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><strong>In this post, I would like to write down some details about Machine Learning tutorial deliverded by Andrew Ng. You can find more details from: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19B4y1W76i/?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click&vd_source=58aa2688d2c8f590ff523016b2a189a7">Machine Learning specification</a></strong></p>
+<p><strong>In addition, I’ll add something new in the future as I’m going to start my master courses</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2023/08/29/My-Machine-Learning-Notebook/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/29/My-Machine-Learning-Notebook/" data-id="clp635lpa0005bgfwdci78jgf" data-title="My-Machine-Learning-Notebook" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deep-learning/" rel="tag">-deep learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/" class="article-date">
+  <time class="dt-published" datetime="2022-09-15T09:11:53.000Z" itemprop="datePublished">2022-09-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/">Use Kruskal &amp; Prim to solve &#39;Min cost to connect all points&#39; problem</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><strong>find problem description</strong> <a target="_blank" rel="noopener" href="https://leetcode.com/problems/min-cost-to-connect-all-points/description/">here</a></p>
+<h2 id="1-Key-concepts"><a href="#1-Key-concepts" class="headerlink" title="1.Key concepts:"></a>1.Key concepts:</h2><p>In this problem, we’re expected to find a unique graph where each point is a node and the edges are Manhatten distances between points. This graph should be a MST(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">Minimum spanning tree</a>)</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/" data-id="clp635lpd000abgfw0twa7qkr" data-title="Use Kruskal &amp; Prim to solve &#39;Min cost to connect all points&#39; problem" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm-Leetcode-Graph-Problems/" rel="tag">Algorithm, Leetcode, Graph Problems</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-CPPtutorial" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/21/CPPtutorial/" class="article-date">
+  <time class="dt-published" datetime="2022-02-21T10:45:00.000Z" itemprop="datePublished">2022-02-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Programming-2023tutorial/">-Programming -2023tutorial</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/02/21/CPPtutorial/">My notebook for CPP Tutorial</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><strong>In this post, I will write down some details about my learning process of watching C++ tutorial on Youtube. You can find more details from <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=18c3MTX0PK0&t=332s">C++ series</a></strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2022/02/21/CPPtutorial/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/21/CPPtutorial/" data-id="clp635lp60001bgfw0ov0b4lc" data-title="My notebook for CPP Tutorial" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-Programming/" rel="tag">-c++ -Programming</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-2023tutorial/">-Programming -2023tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-Programming/" rel="tag">-c++ -Programming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/" rel="tag">-deep learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm-Leetcode-Graph-Problems/" rel="tag">Algorithm, Leetcode, Graph Problems</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/COMPSCI4084/" rel="tag">COMPSCI4084</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Introduction-to-data-science-and-system/" rel="tag">Introduction to data science and system</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning-from-scratch/" rel="tag">learning from scratch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/c-Programming/" style="font-size: 10px;">-c++ -Programming</a> <a href="/tags/deep-learning/" style="font-size: 10px;">-deep learning</a> <a href="/tags/Algorithm-Leetcode-Graph-Problems/" style="font-size: 10px;">Algorithm, Leetcode, Graph Problems</a> <a href="/tags/COMPSCI4084/" style="font-size: 10px;">COMPSCI4084</a> <a href="/tags/Introduction-to-data-science-and-system/" style="font-size: 10px;">Introduction to data science and system</a> <a href="/tags/Machine-Learning/" style="font-size: 15px;">Machine Learning</a> <a href="/tags/learning-from-scratch/" style="font-size: 20px;">learning from scratch</a> <a href="/tags/machine-learning/" style="font-size: 15px;">machine learning</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/19/notice-for-5089-past-exam-paper/">notice for 5089 past exam paper</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/24/notice-for-idss-week5-optimization2/">notice for idss week5 optimization2</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/22/notice-for-idss-week4-optimization/">notice for idss week4 - optimization</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/20/notice-for-java-assessment/">notice for java assessment</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Joseph Wang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
