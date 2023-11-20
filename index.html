@@ -147,7 +147,22 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <hr>
-<p><img src="/../img/5089pastpaper1.png" alt="Computational lingear algebra and optimisation"><br><img src="/../img/5089pastpaper2.png" alt="Part a"></p>
+<p><img src="/../img/5089pastpaper1.png" alt="Computational lingear algebra and optimisation"><br><img src="/../img/5089pastpaper2.png" alt="Part a"><br>Generally, we would like to normalise our original features of data so that they can be brought to a similar scale.</p>
+<ul>
+<li>By using normalisation, we can achieve.</li>
+</ul>
+<ol>
+<li><p>Faster convergence when doing optimisation(like parameter search by using gradient descent)<br> $$<br>\theta_{i} &#x3D; \theta_{i} - \alpha \frac{\partial L}{\partial x}<br> $$<br> Otherwise, there’ll be unwanted oscillation during the optimisation</p>
+</li>
+<li><p>Compute the distance appropriately<br> Some machine learning models are sensitive to the scale of input features. Normalisation can improve performance and accuracy of these models by ensuring that the impact of each feature is consistent.</p>
+</li>
+</ol>
+<p> By using min-max scaling, we can scale our features to a specific range, usually between 0 and 1.</p>
+<ul>
+<li>‘find the closet match’ procedure: <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#import numpy as np</span></span><br><span class="line"><span class="comment">#find the closet match</span></span><br><span class="line">distance_track = np.linalg.norm(target - music_track, axis=<span class="number">0</span>, <span class="built_in">ord</span>=<span class="number">2</span>)</span><br><span class="line"><span class="comment">#target indicates the uploaded track</span></span><br><span class="line"><span class="comment">#music_track indicates all data in the existing dataset.</span></span><br><span class="line">closet_match_indices = np.argmin() <span class="comment">#Returns the indices of the minimum values along an axis.</span></span><br><span class="line"><span class="comment">#https://numpy.org/doc/stable/reference/generated/numpy.argmin.html</span></span><br><span class="line">closet_match_track = distance_track[closet_match_indices]</span><br></pre></td></tr></table></figure>
+ The number of individual distances that we need to compute is equals to the number of tracks in the existing dataset, which means if we have <strong>‘N’</strong> tracks in the dataset, we need to compute <strong>‘N’</strong> individual distances.</li>
+</ul>
+<p> Scalability issues arise when:</p>
 <hr>
 
       
