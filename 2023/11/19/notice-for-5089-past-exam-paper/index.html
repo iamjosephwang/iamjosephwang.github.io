@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://example.com/img/5089pastpaper3.png">
 <meta property="og:image" content="http://example.com/img/5089pastpaper4.png">
 <meta property="article:published_time" content="2023-11-19T21:34:13.000Z">
-<meta property="article:modified_time" content="2023-11-20T16:53:30.989Z">
+<meta property="article:modified_time" content="2023-11-20T17:58:21.313Z">
 <meta property="article:author" content="Joseph Wang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/img/5089pastpaper1.png">
@@ -138,7 +138,19 @@
 <li>By calculating the loss function and doing gradient descent iteratively, we can achieve parameter searching and find the most appropriate parameter <strong>‘w’</strong></li>
 </ol>
 <p><img src="/../img/5089pastpaper4.png" alt="part c"></p>
-<p>we need a linear map(linear maps are functions applied to vectors) to do projection.<br>a <strong>nxm</strong> linear map takes m dimensional vectors to n dimensional vectors.<br>$$<br>   R^{m} -&gt; R^{n}<br>$$<br>we can apply a matrix each vector of music-track dataset.</p>
+<p>To project the original music-track data into 3D and while preserving most of the variance, we can use techniques like PCA.</p>
+<ul>
+<li><p>firstly, we need to center our original data around the origin by subtracting the mean of each features. Use <strong>np.mean</strong></p>
+</li>
+<li><p>secondly, calculating the covariance of the centered data. Use <strong>‘np.cov’</strong></p>
+</li>
+<li><p>then, performing eigendecomposition on the covariance matrix to obtain eigenvalues and eigenvectors. Use <strong>‘np.linalg.’</strong></p>
+</li>
+<li><p>calculating the eigenspectrum by sorting the eigenvalues in descending order and rearranging the corresponding eigenvectors accordingly. Use <strong>‘np.argsort’</strong></p>
+</li>
+<li><p>for we would like to project our original data into 3D,we shall select the top 3 eigenvectors of the covariance matrix. Use <strong>numpy indexing</strong></p>
+</li>
+</ul>
 <hr>
 
       
