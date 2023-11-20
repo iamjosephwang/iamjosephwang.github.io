@@ -101,7 +101,7 @@
 <li>Generally, we would like to normalise our original features of data so that they can be brought to a similar scale.<br> By using normalisation, we can achieve.</li>
 </ul>
 <ol>
-<li><p>Faster convergence when doing optimisation that relys more on euclidean distance<br> $$<br>\theta_{i} &#x3D; \theta_{i} - \alpha \frac{\partial L}{\partial x}<br> $$<br> Otherwise, there’ll be unwanted oscillation during the optimisation</p>
+<li><p>Faster convergence when doing optimisation that relys more on euclidean distance<br> $$<br>\theta_{i} &#x3D; \theta_{i} - \alpha \frac{\partial L}{\partial \theta_{i}}<br> $$<br> Otherwise, there’ll be unwanted oscillation during the optimisation</p>
 </li>
 <li><p>Similarity measures:<br> Euclidean distance is sensitive to the scale of the features. If the features are on different scales, the Euclidean distance can be dominated by features with larger magnitude.</p>
 </li>
