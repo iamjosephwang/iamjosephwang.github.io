@@ -147,22 +147,36 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <hr>
-<p><img src="/../img/5089pastpaper1.png" alt="Computational lingear algebra and optimisation"><br><img src="/../img/5089pastpaper2.png" alt="Part a"><br>Generally, we would like to normalise our original features of data so that they can be brought to a similar scale.</p>
+<p><img src="/../img/5089pastpaper1.png" alt="Computational lingear algebra and optimisation"><br><img src="/../img/5089pastpaper2.png" alt="Part a"><br><img src="/../img/5089pastpapertable1.png" alt="Table 1"></p>
 <ul>
-<li>By using normalisation, we can achieve.</li>
+<li>Generally, we would like to normalise our original features of data so that they can be brought to a similar scale.<br> By using normalisation, we can achieve.</li>
 </ul>
 <ol>
-<li><p>Faster convergence when doing optimisation(like parameter search by using gradient descent)<br> $$<br>\theta_{i} &#x3D; \theta_{i} - \alpha \frac{\partial L}{\partial x}<br> $$<br> Otherwise, there’ll be unwanted oscillation during the optimisation</p>
+<li><p>Faster convergence when doing optimisation that relys more on euclidean distance<br> $$<br>\theta_{i} &#x3D; \theta_{i} - \alpha \frac{\partial L}{\partial x}<br> $$<br> Otherwise, there’ll be unwanted oscillation during the optimisation</p>
 </li>
-<li><p>Compute the distance appropriately<br> Some machine learning models are sensitive to the scale of input features. Normalisation can improve performance and accuracy of these models by ensuring that the impact of each feature is consistent.</p>
+<li><p>Similarity measures:<br> Euclidean distance is sensitive to the scale of the features. If the features are on different scales, the Euclidean distance can be dominated by features with larger magnitude.</p>
 </li>
 </ol>
-<p> By using min-max scaling, we can scale our features to a specific range, usually between 0 and 1.</p>
+<p> suppose we use standardization to normalise our features, which invloves subtract the mean of each feature and dividing by its standard deviation.</p>
 <ul>
 <li>‘find the closet match’ procedure: <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#import numpy as np</span></span><br><span class="line"><span class="comment">#find the closet match</span></span><br><span class="line">distance_track = np.linalg.norm(target - music_track, axis=<span class="number">0</span>, <span class="built_in">ord</span>=<span class="number">2</span>)</span><br><span class="line"><span class="comment">#target indicates the uploaded track</span></span><br><span class="line"><span class="comment">#music_track indicates all data in the existing dataset.</span></span><br><span class="line">closet_match_indices = np.argmin() <span class="comment">#Returns the indices of the minimum values along an axis.</span></span><br><span class="line"><span class="comment">#https://numpy.org/doc/stable/reference/generated/numpy.argmin.html</span></span><br><span class="line">closet_match_track = distance_track[closet_match_indices]</span><br></pre></td></tr></table></figure>
- The number of individual distances that we need to compute is equals to the number of tracks in the existing dataset, which means if we have <strong>‘N’</strong> tracks in the dataset, we need to compute <strong>‘N’</strong> individual distances.</li>
+ The number of individual distances that we need to compute is equal to the number of tracks in the existing dataset, which means if we have <strong>‘N’</strong> tracks in the dataset, we need to compute <strong>‘N’</strong> individual distances.</li>
 </ul>
-<p> Scalability issues arise when:</p>
+<p> Scalability issues arise when:<br>  we are expected to calculate distances for a large number of tracks, that would lead to computationally expensive issue. In that case, we are highly recommended to optimise the search routine.</p>
+<p><img src="/../img/5089pastpaper3.png" alt="Part b"></p>
+<ul>
+<li><p>the dimension of the matrix <strong>‘X’</strong> is (101750, 15), which means the track matrix has 101750 row vectors with each vector has 15 features.<br> as we use the transpose of the parameter <strong>‘w’</strong>, it is a row vector, and y is a column vector.</p>
+</li>
+<li><p>as we have dataset with the label x indicating 15 features of each music track, and the label y indicating the popularity, and we’re expected to do parameter searching by using the squared error as the loss function, we can use linear regression to solve this matrix equation.</p>
+</li>
+</ul>
+<ol>
+<li>Firstly, divide our dataset into three parts: training set, validation set, and test set.</li>
+<li>we can fit a line to create a linear model within our training set.</li>
+<li>By calculating the loss function and doing gradient descent iteratively, we can achieve parameter searching and find the most appropriate parameter <strong>‘w’</strong></li>
+</ol>
+<p><img src="/../img/5089pastpaper4.png" alt="part c"></p>
+<p>we need a linear map to do projection.<br>we can apply a matrix each vector of music-track dataset.<br><img src="/../img/5089operations_with_matrices.png" alt="operations with matrices"></p>
 <hr>
 
       
