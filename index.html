@@ -73,529 +73,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-notice-for-5100-22-23-paper" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/22/notice-for-5100-22-23-paper/" class="article-date">
-  <time class="dt-published" datetime="2023-11-22T23:25:14.000Z" itemprop="datePublished">2023-11-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/22/notice-for-5100-22-23-paper/">notice for 5100 22-23 paper</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>22-23 5100 paper</p>
-<h2 id="Question-1-Regression"><a href="#Question-1-Regression" class="headerlink" title="Question 1:Regression"></a>Question 1:Regression</h2><p><img src="/../img/22_23_5100_paper_question_a0.png" alt="Question 1: Regression"></p>
-<h3 id="a-Propose-a-rescaling-strategy"><a href="#a-Propose-a-rescaling-strategy" class="headerlink" title="a.Propose a rescaling strategy"></a>a.Propose a rescaling strategy</h3><p>Propose a recaling strategy(with enough details of the procedure) for the variable Year.Explain why the proposed strategy is appropriate</p>
-<ul>
-<li>Two common methods:<br> <strong>outilier: an outlier is a data point that differs significantly from other observations.</strong></li>
-</ul>
-<ol>
-<li>Min-Max Scaling(Normalisation):<br>  $$<br>   X_{norm} &#x3D; \frac{X - X_{min}}{X_{max} - X_{min}}<br>  $$<br>  This method scales the value between 0 and 1.(it is useful when the distriution of the data is not Guassian or when the algorithm you’re using relies on the input features being similar scale.)</li>
-<li>Standardization(Z-score Normalisation):<br>  $$<br>   X_{std} &#x3D; \frac{X - \mu}{\sigma}<br>  $$<br>  This method standardizes the features by rescaling them to have a mean of zero and standard deviation of 1. Standardization assumes a Gaussian distribution of the data and is suitable when the features have different units or different features.<br>  if you want to be robust to outiliers, standardization could be a good choice.</li>
-</ol>
-<ul>
-<li>If we use polynomial regression, the features are not just raw absolute values of the year; they also include higher-order terms.</li>
-</ul>
-<ol>
-<li><p>Rescaling can ensure features on a similar scale.<br> Rescaling can ensure that all features, including those higher-order terms, are on a similar scale. Rescaling allows our model to still produce well-behaved values.</p>
-</li>
-<li><p>Rescaling can ensure a faster convergence.</p>
-</li>
-<li><p>Rescaling can prevent numerical issues.<br> When optimising our parameters to enhance the performance of our model, we’re expected to manipulate many matrix operations, especially inversion operations. features of higher-order terms produced polynomial regressions can lead to numeric instability. Rescaling can ensure that the matrix values are within a resonable range, preventing numerical issues especially during the inversion operations.</p>
-</li>
-</ol>
-<p> <strong>numerical issues refer to ‘numerical instability’, ‘loss of precision’ and computational efficiency</strong></p>
-<h3 id="b-fit-the-data-with-a-polynomial-regression-model"><a href="#b-fit-the-data-with-a-polynomial-regression-model" class="headerlink" title="b. fit the data with a polynomial regression model"></a>b. fit the data with a polynomial regression model</h3><p>Consider fitting the data with a polynomial regression model with the order of 1,<br>identify the two most likely poorly fitted data points and explain why.</p>
-<ul>
-<li>x&#x3D;1960, x&#x3D;1962<br> The polynomial model with the order of 1 is a straight line.</li>
-</ul>
-<h3 id="c-fit-the-data-with-a-regression-with-the-sigmoid-basis-function"><a href="#c-fit-the-data-with-a-regression-with-the-sigmoid-basis-function" class="headerlink" title="c. fit the data with a regression with the sigmoid basis function"></a>c. fit the data with a regression with the sigmoid basis function</h3><h2 id="h-n-k-sigmoid-frac-x-n-mu-k-2-s-n-1-dot-N-k-1-dot-K"><a href="#h-n-k-sigmoid-frac-x-n-mu-k-2-s-n-1-dot-N-k-1-dot-K" class="headerlink" title="$$ h_{n,k} &#x3D; sigmoid(\frac{(x_{n} - \mu_{k})^{2}}{s}), n &#x3D; 1,\dot,N; k &#x3D; 1,\dot,K.$$"></a>$$<br> h_{n,k} &#x3D; sigmoid(\frac{(x_{n} - \mu_{k})^{2}}{s}), n &#x3D; 1,\dot,N; k &#x3D; 1,\dot,K.<br>$$</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/22/notice-for-5100-22-23-paper/" data-id="clpb7x3e70000bsfw2uish9a9" data-title="notice for 5100 22-23 paper" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-notice-for-5089-final-exam-lecture-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/20/notice-for-5089-final-exam-lecture-3/" class="article-date">
-  <time class="dt-published" datetime="2023-11-20T14:43:42.000Z" itemprop="datePublished">2023-11-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/20/notice-for-5089-final-exam-lecture-3/">notice for 5089 final exam(lecture 3)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <!-- Add the MathJax script within your blog post -->
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-<hr>
-<h2 id="1-How-discrete-problems-can-be-modelled-using-continuous-mathematics"><a href="#1-How-discrete-problems-can-be-modelled-using-continuous-mathematics" class="headerlink" title="1. How discrete problems can be modelled using continuous mathematics"></a>1. How discrete problems can be modelled using continuous mathematics</h2><h3 id="1-1-How-graphs-can-be-represented-as-matrices"><a href="#1-1-How-graphs-can-be-represented-as-matrices" class="headerlink" title="1.1 How graphs can be represented as matrices"></a>1.1 How graphs can be represented as matrices</h3><p>The definition of a graph is <strong>G &#x3D; (V, E)</strong>, where <strong>V</strong> is a set of vertices and <strong>E</strong> is a set of edges connecting pairs of vertices.<br>given V set and E set, we can write the adjacency matrix <strong>A</strong> with each element Aij equal to the weight of edge from <strong>vi</strong> to <strong>vj</strong>(edge-weighted graph)</p>
-<p>some helpful properties of graph matrix:</p>
-<ol>
-<li><p>in-degree(numbers of edges entering a vertex) and out-degree(numbers of edges leaving a vertex) of each vertex</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">in_degrees = np.<span class="built_in">sum</span>(adjacency_matrix, axis=<span class="number">0</span>)</span><br><span class="line">out_degrees = np.<span class="built_in">sum</span>(adjacency_matrix, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>if the matrix is symmetric, it represents an undirected graph<br> and we can get an undirected graph by calculating the sum of a directed graph and its transpose.</p>
-</li>
-</ol>
-<h3 id="1-2-How-flows-on-graphs-can-be-represented-as-matrix-operations"><a href="#1-2-How-flows-on-graphs-can-be-represented-as-matrix-operations" class="headerlink" title="1.2 How flows on graphs can be represented as matrix operations"></a>1.2 How flows on graphs can be represented as matrix operations</h3><ol>
-<li><p>Matrix can be exponentiated<br> $$<br> C &#x3D; A^{n}<br> $$</p>
-</li>
-<li><p>Matrix can be inverted<br> $$<br> C &#x3D; A^{-1}<br> $$</p>
-</li>
-<li><p>We can find eigenvalues:<br> $$<br> Ax &#x3D; \lambda x<br> $$</p>
-</li>
-</ol>
-<p> this identifies specific vectors <strong>x</strong> that are only scaled by a factor <strong>λ</strong><br>4. Matrix can be factorised.<br> any matrix can be expressed by the product of three other matrices with special forms.</p>
-<h2 id="2-What-eigenvectors-and-eigenvalues-are"><a href="#2-What-eigenvectors-and-eigenvalues-are" class="headerlink" title="2. What eigenvectors and eigenvalues are"></a>2. What eigenvectors and eigenvalues are</h2><p>eigenvectors tell us which vectors have their direction unchanged by a linear transformation, besides, those vectors are scaled by eigenvalues after transformation.</p>
-<p>find more detailed information <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">here</a></p>
-<h3 id="2-1-How-the-power-iteration-method-can-compute-them"><a href="#2-1-How-the-power-iteration-method-can-compute-them" class="headerlink" title="2.1 How the power iteration method can compute them"></a>2.1 How the power iteration method can compute them</h3><p>we’re highly recommended to normalise(by using L∞ norm) our current vector after each iteration.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">power_iteration</span>(<span class="params">A, x, n</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        x = A @ x</span><br><span class="line">        x = np.linalg.norm(x, <span class="built_in">ord</span>=x.inf)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> x / np.linalg.norm(x, <span class="built_in">ord</span>=<span class="number">2</span>)<span class="comment">#use L2 norm so that we can make comparsion with np.linalg.eig()</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2-How-they-can-be-used-to-decompose-matrices"><a href="#2-2-How-they-can-be-used-to-decompose-matrices" class="headerlink" title="2.2 How they can be used to decompose matrices"></a>2.2 How they can be used to decompose matrices</h3><p>The eigenspectrum indicates the sequence of absolute eigenvalues, ordered by magnitude<br>$$<br>    |\lambda_{1}|&gt;|\lambda_{2}|&gt;|&gt;\dots&gt;|\lambda_{n}|<br>$$</p>
-<h2 id="To-do-decomposition-we-can-get-eigenvalues-and-eigenvectors-and-calculate-the-eigenspectrum-the-sequence-of-eigenvalues-ordered-by-magnitude-which-ranks-the-eigenvectors-in-order-of-“importance”-We-can-easily-the-process-of-those-steps-by-using-the-following-method"><a href="#To-do-decomposition-we-can-get-eigenvalues-and-eigenvectors-and-calculate-the-eigenspectrum-the-sequence-of-eigenvalues-ordered-by-magnitude-which-ranks-the-eigenvectors-in-order-of-“importance”-We-can-easily-the-process-of-those-steps-by-using-the-following-method" class="headerlink" title="To do decomposition, we can get eigenvalues and eigenvectors, and calculate the eigenspectrum(the sequence of eigenvalues ordered by magnitude), which ranks the eigenvectors in order of “importance”. We can easily the process of those steps by using the following method."></a>To do decomposition, we can get eigenvalues and eigenvectors, and calculate the eigenspectrum(the sequence of eigenvalues ordered by magnitude), which ranks the eigenvectors in order of “importance”. We can easily the process of those steps by using the following method.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">eigenvectors, eigenvalues = np.linalg.eig(music_track)</span><br><span class="line"><span class="comment">#music_track indicates our original music-track dataset</span></span><br><span class="line"><span class="comment">#eigenvectors[:,i] is the eigenvector corresponding to the eigenvalue eigenvalues[i].</span></span><br><span class="line"></span><br><span class="line">eigenspectrum = eigenvalues[np.argsort(-np.<span class="built_in">abs</span>(eigenvalues))]</span><br><span class="line"></span><br></pre></td></tr></table></figure></h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/20/notice-for-5089-final-exam-lecture-3/" data-id="clp71si260000jsfwgokdfmyg" data-title="notice for 5089 final exam(lecture 3)" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-notice-for-5089-past-exam-paper" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/19/notice-for-5089-past-exam-paper/" class="article-date">
-  <time class="dt-published" datetime="2023-11-19T21:34:13.000Z" itemprop="datePublished">2023-11-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/19/notice-for-5089-past-exam-paper/">notice for 5089 past exam paper</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <!-- Add the MathJax script within your blog post -->
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-<hr>
-<p><img src="/../img/5089pastpaper1.png" alt="Computational lingear algebra and optimisation"><br><img src="/../img/5089pastpaper2.png" alt="Part a"><br><img src="/../img/5089pastpapertable1.png" alt="Table 1"></p>
-        
-          <p class="article-more-link">
-            <a href="/2023/11/19/notice-for-5089-past-exam-paper/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/19/notice-for-5089-past-exam-paper/" data-id="clp635lpg000kbgfw0yzb5hsy" data-title="notice for 5089 past exam paper" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-notice-for-idss-week5-optimization2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/10/24/notice-for-idss-week5-optimization2/" class="article-date">
-  <time class="dt-published" datetime="2023-10-24T08:04:01.000Z" itemprop="datePublished">2023-10-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/10/24/notice-for-idss-week5-optimization2/">notice for idss week5 optimization2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><strong>Overview</strong></p>
-<ul>
-<li>what first-order optimisation is</li>
-<li>how gradient descent works</li>
-<li>what automatic differentiation is, and why it is important for optimisation</li>
-<li>what the Jacobian (matrix), gradient (vector) and Hessian (matrix) are, and how they characterise the local behaviour of the objective function</li>
-<li>what continuity is, and how Lipschitz continuity relates to gradient descent</li>
-<li>how stochastic relaxation can be used to create smooth continuous objective functions from discontinuous ones</li>
-<li>what stochastic gradient descent is and why it is useful</li>
-<li>what momentum is, and how it can improve gradient descent</li>
-<li>what second-order methods are and their limitations</li>
-</ul>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/10/24/notice-for-idss-week5-optimization2/" data-id="clp635lph000obgfw8341a8m6" data-title="notice for idss week5 optimization2" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Introduction-to-data-science-and-system/" rel="tag">Introduction to data science and system</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-notice-for-idss-week4-optimization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/10/22/notice-for-idss-week4-optimization/" class="article-date">
-  <time class="dt-published" datetime="2023-10-22T21:57:47.000Z" itemprop="datePublished">2023-10-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/10/22/notice-for-idss-week4-optimization/">notice for idss week4 - optimization</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><ul>
-<li>what an objective function, constraint function and a parameter vector is in the context of optimisation</li>
-<li>how to play the piano</li>
-<li>the difference between discrete and continuous optimisation</li>
-<li>convex and nonconvex optimisation and how to recognise them</li>
-<li>what constrained optimisation is and the difference between soft and hard constraints</li>
-<li>key properties of objective functions, including convexity and continuity</li>
-<li>basic uses of optimisation and how to come up with objective functions</li>
-<li>what linear least squares is</li>
-<li>how iterative optimisation works</li>
-<li>the principles of heuristic optimisation</li>
-<li>the properties of random search, with the metaheuristics: locality, memory, temperature and population</li>
-</ul>
-<h4 id="1-objective-function-constraint-function-parameter-vector-in-optimisation"><a href="#1-objective-function-constraint-function-parameter-vector-in-optimisation" class="headerlink" title="1. objective function, constraint function, parameter vector in optimisation"></a>1. objective function, constraint function, parameter vector in optimisation</h4><p>in computer science, we want to achieve automatic optimisation by using algorithm.<br>There are no exact special cases for every real problem. we’re highly recommended to formulate our problems and then apply relevant algorithm.</p>
-<ol>
-<li>my vision w.r.t <strong>parameter vector</strong> is something like a set of configuration to make our model achieve better performance.</li>
-<li><strong>objective function</strong> is one way we use to measure the performance of data(like loss function in ML).Generally, the output of objective function is a single scalar.<br> basically, our work is to find a set of configuration of parameters to minimise our objection function.</li>
-<li><strong>constraint function</strong> indicates something like we set some restrictions on the possible parameter vector.</li>
-</ol>
-<p>Anyway, optimisation is expensive in most cases for various reasons.</p>
-<h4 id="2-Continuous-optimisation-vs-Discrete-optimisation"><a href="#2-Continuous-optimisation-vs-Discrete-optimisation" class="headerlink" title="2. Continuous optimisation vs. Discrete optimisation"></a>2. Continuous optimisation vs. Discrete optimisation</h4><ol>
-<li><p>Continuous optimisation: search a continuous vector space to find the point where the output of objective function is the smallest.<br> focus on iterative, approximate optimisation</p>
-</li>
-<li><p><strong>Gometric median</strong><br> median: the vector that minimises the sum of distances to all vectors in the dataset.<br> it’s enlightening to understand why we get series of (x,y) pairs in the coordinate in the process of optimisation.</p>
-</li>
-</ol>
-<p> got a good point of view w.r.t real-world problem.</p>
-<p> <strong>Problem: Optimal Cell Tower Placement</strong><br> In the field of telecommunications and network infrastructure planning, one common optimization problem is the optimal placement of cell towers or base stations to provide cellular coverage to a given area while minimizing deployment costs and ensuring efficient network performance.</p>
-<h4 id="3-hard-constraints-vs-soft-constraints"><a href="#3-hard-constraints-vs-soft-constraints" class="headerlink" title="3. hard constraints vs. soft constraints"></a>3. hard constraints vs. soft constraints</h4><ol>
-<li><p><strong>hard constraints</strong>: use an optimisation algorithm that supports hard constraints inherently. the constraints will be specified as a convex or rectangular region of the space.<br> Pros and Cons.</p>
-</li>
-<li><p><strong>soft constraints</strong>: apply penalties to objective function to discourage solutions that violate the constraints.<br> <strong>egregiously</strong>:in an outstandingly, bad way<br> Pros and Cons.</p>
-</li>
-<li><p><strong>Relaxation of objective functions</strong><br> It can be hard to solve discrete optimisation and constrained optimisation problems efficiently. algorithms try to find similar continuous or unconstrained optimisation problems and solve instead.That is, relaxation.</p>
-</li>
-</ol>
-<h4 id="4-properties-of-objective-function"><a href="#4-properties-of-objective-function" class="headerlink" title="4.properties of objective function"></a>4.properties of objective function</h4><ol>
-<li>convexity: we want to find the global minimum</li>
-<li>continuity:</li>
-</ol>
-<h4 id="5-Algorithm"><a href="#5-Algorithm" class="headerlink" title="5.Algorithm"></a>5.Algorithm</h4><ol>
-<li><p><strong>Direct convex optimisation - least squares</strong></p>
-</li>
-<li><p><strong>Iterative optimisation</strong>:<br> somthing like: during the iteration:</p>
-</li>
-<li><p>adjust the paramter</p>
-</li>
-<li><p>evaluate objective function</p>
-</li>
-<li><p>if better solution found, record it.</p>
-</li>
-<li><p><strong>Regular search: grid search</strong></p>
-</li>
-<li><p>something like we divide multidimensional space into groups(in 1-D, linear segments, in 2-D, some rectangular regions, and in 3-D some cubes)</p>
-</li>
-<li><p>during the beginning of iteration, we may get several points from different divided groups. but as the iteration goes ahead,finally, in most cases, there’s<br> only one point left.</p>
-</li>
-<li><p>density of grid search:<br> note that if our objective function is not very smooth, a much denser grid would be required to catch the minima.</p>
-</li>
-<li><p><strong>hyperparameters:</strong> affect the way in which the optimiser finds a solution</p>
-</li>
-<li><p><strong>Simple stochastic - random search</strong></p>
-</li>
-<li><p><strong>better than grid search, almost always</strong> That is so impressive! lol</p>
-</li>
-<li><p><strong>Metaheuristics</strong>: i have no idea. seems that can be used to improve random search</p>
-</li>
-<li><p>Locality:</p>
-</li>
-<li><p>depending on initial conditions.</p>
-</li>
-<li><p>may become traped in local w</p>
-</li>
-<li><p><strong>Hill climbing - local search</strong>: can easily get stuck in the local minima<br>* ways that the hill climbing can be tweaked.</p>
-</li>
-<li><p><strong>Temperature</strong></p>
-</li>
-<li><p>avoid always downhill and stuck in the minima </p>
-</li>
-<li><p>Population</p>
-</li>
-<li><p>Memory</p>
-</li>
-</ol>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/10/22/notice-for-idss-week4-optimization/" data-id="clp635lpg000mbgfw71hj6te9" data-title="notice for idss week4 - optimization" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-notice-for-java-assessment" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/10/20/notice-for-java-assessment/" class="article-date">
-  <time class="dt-published" datetime="2023-10-20T08:06:15.000Z" itemprop="datePublished">2023-10-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/10/20/notice-for-java-assessment/">notice for java assessment</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h3 id="Java-Basics"><a href="#Java-Basics" class="headerlink" title="Java Basics"></a>Java Basics</h3><h4 id="statically-typed-vs-dynamically-typed"><a href="#statically-typed-vs-dynamically-typed" class="headerlink" title="statically typed vs. dynamically typed"></a>statically typed vs. dynamically typed</h4><p>Java is <strong>statically typed</strong>,which means the data type of variables in java are known and checked at compile time, before the program is executed.(vs. dynamically typed language like python)<br>types of all variables must be declared(unlike python)<br>Local variables, class fields, method parameter and return values.</p>
-<p><strong>Variables cannot be redeclared with a different type</strong></p>
-<p><img src="/../img/java_primitive_type.png" alt="java primitive type"></p>
-        
-          <p class="article-more-link">
-            <a href="/2023/10/20/notice-for-java-assessment/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/10/20/notice-for-java-assessment/" data-id="clp635lpi000sbgfwa72e00xu" data-title="notice for java assessment" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/COMPSCI4084/" rel="tag">COMPSCI4084</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="custom-layout-My-solution-for-UofG-23Fall-COMPSCI5100-week2-lab" class="h-entry article article-type-custom-layout" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/10/15/My-solution-for-UofG-23Fall-COMPSCI5100-week2-lab/" class="article-date">
-  <time class="dt-published" datetime="2023-10-15T16:23:30.000Z" itemprop="datePublished">2023-10-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/10/15/My-solution-for-UofG-23Fall-COMPSCI5100-week2-lab/">My solution for UofG 23Fall COMPSCI5100 week2 lab</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3>Linear regression lab 2</h3>
-
-
-<!-- Add the MathJax script within your blog post -->
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-<hr>
-<h4 id="Aims"><a href="#Aims" class="headerlink" title="Aims"></a>Aims</h4><ul>
-<li>Practice general linear regression with polynomial and RBF </li>
-<li>Choose the order of polynomials with cross validation</li>
-<li>Practice ridge regression</li>
-</ul>
-<h4 id="Tasks"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</h4><ul>
-<li>Rescale</li>
-<li>Write functions to construct the design matrix, $X$, with polynomials and RBFs</li>
-<li>Implement cross-validation to choose the right polynoimal order</li>
-<li>Test polynoimal regression and cross-validation on new data where the true order is known</li>
-<li>Test ridge regression</li>
-<li>Test linear regression with the RBF</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2023/10/15/My-solution-for-UofG-23Fall-COMPSCI5100-week2-lab/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/10/15/My-solution-for-UofG-23Fall-COMPSCI5100-week2-lab/" data-id="clp635lpc0009bgfwd7fjc7qp" data-title="My solution for UofG 23Fall COMPSCI5100 week2 lab" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-learning-from-scratch-2023-10-02" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/10/02/learning-from-scratch-2023-10-02/" class="article-date">
-  <time class="dt-published" datetime="2023-10-02T20:27:50.000Z" itemprop="datePublished">2023-10-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/10/02/learning-from-scratch-2023-10-02/">learning from scratch 2023-10-02</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h3 id="1-Cartesian-coordinate"><a href="#1-Cartesian-coordinate" class="headerlink" title="1. Cartesian coordinate"></a>1. Cartesian coordinate</h3><h3 id="2-orthogonal-direction"><a href="#2-orthogonal-direction" class="headerlink" title="2. orthogonal direction"></a>2. orthogonal direction</h3><p>Orthogonal just means “independent”, or, geometrically speaking “at 90 degrees”.</p>
-<h3 id="3-vector-spaces"><a href="#3-vector-spaces" class="headerlink" title="3. vector spaces"></a>3. vector spaces</h3><p>Any vector of given dimension 𝑛 lies in a vector space, called $$R^n$$</p>
-<h4 id="3-1-scalars"><a href="#3-1-scalars" class="headerlink" title="3.1 scalars"></a>3.1 scalars</h4><ol>
-<li>scalars as components in vector</li>
-<li>scalars in normed vector spaces</li>
-</ol>
-<h4 id="3-2-isomorphism"><a href="#3-2-isomorphism" class="headerlink" title="3.2 isomorphism"></a>3.2 isomorphism</h4><h4 id="3-3-injective-function"><a href="#3-3-injective-function" class="headerlink" title="3.3 injective function"></a>3.3 injective function</h4><p>an injective function is a function f that maps distinct elements of its domain to distinct elements.</p>
-<h3 id="4-Topological-and-inner-product"><a href="#4-Topological-and-inner-product" class="headerlink" title="4.Topological and inner product"></a>4.Topological and inner product</h3><h3 id="5-norms"><a href="#5-norms" class="headerlink" title="5.norms"></a>5.norms</h3><p>not all norms come from an inner product</p>
-<h3 id="6-linear-interpolation"><a href="#6-linear-interpolation" class="headerlink" title="6.linear interpolation"></a>6.linear interpolation</h3><h3 id="7-linear-transform"><a href="#7-linear-transform" class="headerlink" title="7.linear transform"></a>7.linear transform</h3><p>map represented by the matrix is $nxn$ then it maps from a vector space onto the same vector space(e.g, from $R^{n}$ -&gt; $R^{n}$ )</p>
-<h3 id="8-linear-projection"><a href="#8-linear-projection" class="headerlink" title="8.linear projection"></a>8.linear projection</h3><h3 id="9-plane-in-an-n-dimensional-vector-space"><a href="#9-plane-in-an-n-dimensional-vector-space" class="headerlink" title="9. plane in an n-dimensional vector space"></a>9. plane in an n-dimensional vector space</h3><h2 id="In-an-n-dimensional-vector-space-you-can-represent-a-plane-using-n-linearly-independent-vectors"><a href="#In-an-n-dimensional-vector-space-you-can-represent-a-plane-using-n-linearly-independent-vectors" class="headerlink" title="In an n-dimensional vector space, you can represent a plane using n linearly independent vectors"></a>In an n-dimensional vector space, you can represent a plane using n linearly independent vectors</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/10/02/learning-from-scratch-2023-10-02/" data-id="clp635lpe000gbgfw3r4w7h8r" data-title="learning from scratch 2023-10-02" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning-from-scratch/" rel="tag">learning from scratch</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-numpy-learning-from-scratch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/09/29/numpy-learning-from-scratch/" class="article-date">
@@ -686,10 +163,10 @@
 
 
   
-    <article id="post-My-solution-for-UofG-23Fall-COMPSCI5100-week1-lab" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/09/29/My-solution-for-UofG-23Fall-COMPSCI5100-week1-lab/" class="article-date">
-  <time class="dt-published" datetime="2023-09-29T19:57:10.000Z" itemprop="datePublished">2023-09-29</time>
+    <a href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/" class="article-date">
+  <time class="dt-published" datetime="2022-09-15T09:11:53.000Z" itemprop="datePublished">2022-09-15</time>
 </a>
     
   </div>
@@ -700,7 +177,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/29/My-solution-for-UofG-23Fall-COMPSCI5100-week1-lab/">My solution for UofG 23Fall COMPSCI5100 week1 lab</a>
+      <a class="p-name article-title" href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/">Use Kruskal &amp; Prim to solve &#39;Min cost to connect all points&#39; problem</a>
     </h1>
   
 
@@ -709,38 +186,71 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <hr>
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-<h3>ML4DS Lab: week 1: Simple linear regression lab</h3>
-
-<h4 id="Aims"><a href="#Aims" class="headerlink" title="Aims"></a>Aims</h4><ul>
-<li>Do a simple linear regression on the Olympic 100~m data in Python</li>
-<li>Practise numpy, matplotlib, and sklearn</li>
-</ul>
-<h4 id="Tasks"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</h4><ul>
-<li>Download the data (‘olympic100m.txt’) from the Moodle page</li>
-<li>Plot Olympic year against winning time</li>
-<li>Plot the loss function in 1D and 2D</li>
-<li>Fit a model with sklearn functions </li>
-<li>Fit a model with using provided expressions to compute $$w_0$$ and $$w_1$$. </li>
-<li>Create a new plot that includes the data and the function defined by $$w_0$$ and $$w_1$$</li>
-<li>Make a prediction at 2012</li>
-</ul>
+<p><strong>find problem description</strong> <a target="_blank" rel="noopener" href="https://leetcode.com/problems/min-cost-to-connect-all-points/description/">here</a></p>
+<h2 id="1-Key-concepts"><a href="#1-Key-concepts" class="headerlink" title="1.Key concepts:"></a>1.Key concepts:</h2><p>In this problem, we’re expected to find a unique graph where each point is a node and the edges are Manhatten distances between points. This graph should be a MST(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">Minimum spanning tree</a>)</p>
         
           <p class="article-more-link">
-            <a href="/2023/09/29/My-solution-for-UofG-23Fall-COMPSCI5100-week1-lab/#more">Read More</a>
+            <a href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/29/My-solution-for-UofG-23Fall-COMPSCI5100-week1-lab/" data-id="clp635lpb0006bgfw38v33o66" data-title="My solution for UofG 23Fall COMPSCI5100 week1 lab" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/" data-id="clp635lpd000abgfw0twa7qkr" data-title="Use Kruskal &amp; Prim to solve &#39;Min cost to connect all points&#39; problem" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm-Leetcode-Graph-Problems/" rel="tag">Algorithm, Leetcode, Graph Problems</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-CPPtutorial" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/21/CPPtutorial/" class="article-date">
+  <time class="dt-published" datetime="2022-02-21T10:45:00.000Z" itemprop="datePublished">2022-02-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Programming-2023tutorial/">-Programming -2023tutorial</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/02/21/CPPtutorial/">My notebook for CPP Tutorial</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><strong>In this post, I will write down some details about my learning process of watching C++ tutorial on Youtube. You can find more details from <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=18c3MTX0PK0&t=332s">C++ series</a></strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2022/02/21/CPPtutorial/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/21/CPPtutorial/" data-id="clp635lp60001bgfw0ov0b4lc" data-title="My notebook for CPP Tutorial" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c-Programming/" rel="tag">-c++ -Programming</a></li></ul>
 
     </footer>
   </div>
@@ -751,11 +261,6 @@
 
   
 
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-  </nav>
 
 </section>
         
@@ -785,7 +290,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/c-Programming/" style="font-size: 10px;">-c++ -Programming</a> <a href="/tags/deep-learning/" style="font-size: 10px;">-deep learning</a> <a href="/tags/Algorithm-Leetcode-Graph-Problems/" style="font-size: 10px;">Algorithm, Leetcode, Graph Problems</a> <a href="/tags/COMPSCI4084/" style="font-size: 10px;">COMPSCI4084</a> <a href="/tags/Introduction-to-data-science-and-system/" style="font-size: 10px;">Introduction to data science and system</a> <a href="/tags/Machine-Learning/" style="font-size: 15px;">Machine Learning</a> <a href="/tags/learning-from-scratch/" style="font-size: 20px;">learning from scratch</a> <a href="/tags/machine-learning/" style="font-size: 15px;">machine learning</a>
+      <a href="/tags/c-Programming/" style="font-size: 20px;">-c++ -Programming</a> <a href="/tags/deep-learning/" style="font-size: 10px;">-deep learning</a> <a href="/tags/Algorithm-Leetcode-Graph-Problems/" style="font-size: 20px;">Algorithm, Leetcode, Graph Problems</a> <a href="/tags/COMPSCI4084/" style="font-size: 10px;">COMPSCI4084</a> <a href="/tags/Introduction-to-data-science-and-system/" style="font-size: 10px;">Introduction to data science and system</a> <a href="/tags/Machine-Learning/" style="font-size: 10px;">Machine Learning</a> <a href="/tags/learning-from-scratch/" style="font-size: 10px;">learning from scratch</a> <a href="/tags/machine-learning/" style="font-size: 20px;">machine learning</a>
     </div>
   </div>
 
@@ -794,7 +299,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
     </div>
   </div>
 
@@ -807,23 +312,15 @@
       <ul>
         
           <li>
-            <a href="/2023/11/22/notice-for-5100-22-23-paper/">notice for 5100 22-23 paper</a>
+            <a href="/2023/09/29/numpy-learning-from-scratch/">numpy learning from scratch</a>
           </li>
         
           <li>
-            <a href="/2023/11/20/notice-for-5089-final-exam-lecture-3/">notice for 5089 final exam(lecture 3)</a>
+            <a href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/">Use Kruskal &amp; Prim to solve &#39;Min cost to connect all points&#39; problem</a>
           </li>
         
           <li>
-            <a href="/2023/11/19/notice-for-5089-past-exam-paper/">notice for 5089 past exam paper</a>
-          </li>
-        
-          <li>
-            <a href="/2023/10/24/notice-for-idss-week5-optimization2/">notice for idss week5 optimization2</a>
-          </li>
-        
-          <li>
-            <a href="/2023/10/22/notice-for-idss-week4-optimization/">notice for idss week4 - optimization</a>
+            <a href="/2022/02/21/CPPtutorial/">My notebook for CPP Tutorial</a>
           </li>
         
       </ul>
@@ -839,7 +336,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2023 Joseph Wang<br>
+      &copy; 2024 Joseph Wang<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
