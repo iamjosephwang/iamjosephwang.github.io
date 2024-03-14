@@ -73,6 +73,110 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-HCI-revision-notebook" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/14/HCI-revision-notebook/" class="article-date">
+  <time class="dt-published" datetime="2024-03-14T14:03:02.000Z" itemprop="datePublished">2024-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/14/HCI-revision-notebook/">HCI revision notebook</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>Week 1: Introduction to Human-Computer Interaction Design and Evaluation (HCIDE)</p>
+<p>I. Introduction to HCIDE<br>   A. Definition and Importance<br>   B. Basic Topics in HCIDE:<br>      1. Visual Usability<br>      2. Heuristic Evaluation<br>      3. Experiment Design<br>      4. Quantitative Methods<br>      5. Ethnography and Qualitative Methods<br>      6. Survey and Mixed Methods<br>      7. User-Centered Design</p>
+<p>II. Visual Usability<br>   A. Multidisciplinary Challenges:<br>      1. Graphic Design and Complex Systems<br>      2. Usability and User Experience<br>   B. Consistency in Design:<br>      1. External Consistency<br>      2. Internal Consistency<br>      3. Elements of Consistency:<br>         * Layout Consistency<br>         * Typograph Consistency<br>         * Colour Consistency<br>         * Imagery Consistency<br>         * Control and Affordance<br>   C. Visual Hierarchy:<br>      1. Importance of Visual Hierarchy<br>      2. Techniques for Establishing Hierarchy</p>
+<p>III. The Language of Layout<br>   A. Proximity, Scale, and Alignment<br>   B. White Space<br>   C. Positioning Techniques</p>
+<p>IV. Color in Interface Design<br>   A. Importance of Color<br>      1. Attractiveness and Emotional Response<br>      2. Usability and Accessibility<br>   B. Considerations in Color Choices:<br>      1. Cultural Associations<br>      2. UI Conventions<br>      3. Accessibility Considerations for Color-Blind Users<br>   C. Best Practices for Using Color Effectively</p>
+<p>V. Introduction to HCI Basic Topics<br>   A. Visual Usability<br>   B. Heuristic Evaluation<br>   C. Experiment Design<br>   D. Quantitative Methods<br>   E. Ethnography and Qualitative Methods<br>   F. Survey and Mixed Methods<br>   G. User-Centered Design</p>
+<p>VI. Conclusion<br>   A. Recap of Visual Usability Concepts<br>   B. Importance of Considering Visual Design in HCI<br>   C. Next Steps in HCIDE Curriculum</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/14/HCI-revision-notebook/" data-id="cltraxlit0000zsfw7m2y2dpl" data-title="HCI revision notebook" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-learn-CPP-storage-from-scratch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/04/learn-CPP-storage-from-scratch/" class="article-date">
+  <time class="dt-published" datetime="2024-02-04T11:01:07.000Z" itemprop="datePublished">2024-02-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/02/04/learn-CPP-storage-from-scratch/">learn CPP storage from scratch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="1-layers-w-r-t-storage-distribution"><a href="#1-layers-w-r-t-storage-distribution" class="headerlink" title="1. layers w.r.t storage distribution"></a>1. layers w.r.t storage distribution</h2><p><img src="/../img/storage_layers.png"></p>
+<h3 id="1-1-C-memory-primitives"><a href="#1-1-C-memory-primitives" class="headerlink" title="1.1 C++ memory primitives"></a>1.1 C++ memory primitives</h3><ol>
+<li><p>malloc, free()<br> predefined in C library, cannot be overloaded.</p>
+</li>
+<li><p>new, delete<br> predefined as C++ expressions, cannot be overloaded.</p>
+</li>
+<li><p>::operator new(), ::operator delete()<br> predefined as C++ functions, can be overloaded.</p>
+</li>
+<li><p>allocator<T>::allocate, allocator<T>::deallocate()<br> predefined in C++ library. users are allowed to design their own allocate-like function.<br> can work with containers.</p>
+</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span>* p1 = <span class="built_in">malloc</span>(<span class="number">512</span>); <span class="comment">//size_t</span></span><br><span class="line"><span class="built_in">free</span>(p1);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">template&lt;typename T&gt;</span></span><br><span class="line"><span class="comment">class Complex &#123;</span></span><br><span class="line"><span class="comment">    T real, imag;</span></span><br><span class="line"><span class="comment">&#125;;*/</span></span><br><span class="line">Complex&lt;<span class="type">int</span>&gt;* p2 = <span class="keyword">new</span> Complex&lt;<span class="type">int</span>&gt;;</span><br><span class="line"><span class="keyword">delete</span> p2;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span>* p3 = ::<span class="keyword">operator</span> <span class="built_in">new</span>(<span class="number">512</span>); <span class="comment">//size_t</span></span><br><span class="line">::<span class="function"><span class="keyword">operator</span> <span class="title">delete</span><span class="params">(p3)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Complex* pc</span>;</span><br><span class="line"><span class="type">void</span>* mem = <span class="keyword">operator</span> <span class="built_in">new</span>(<span class="built_in">sizeof</span>(Complex));</span><br><span class="line">pc = <span class="built_in">static_cast</span>&lt;Complex*&gt;(mem);</span><br><span class="line"><span class="comment">//compiler automatically call the constructor.</span></span><br><span class="line"><span class="comment">//something like pc-&gt;Complex::Complex(1,2)</span></span><br><span class="line"><span class="comment">//with the constructor being called, we have a complex instance with real 1 and image 2.</span></span><br><span class="line"><span class="comment">//we actually use &#x27;placement new&#x27; to call our constructor. </span></span><br><span class="line"><span class="keyword">new</span>(pc)<span class="built_in">Complex</span>(<span class="number">1</span>,<span class="number">2</span>); <span class="comment">//pc represent a pointer, followed by call of constructor.</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span>* p4 = <span class="built_in">allocator</span>&lt;<span class="type">int</span>&gt;().<span class="built_in">allocate</span>(<span class="number">7</span>);</span><br><span class="line"><span class="built_in">allocator</span>&lt;<span class="type">int</span>&gt;().<span class="built_in">deallocate</span>((<span class="type">int</span>*)p4, <span class="number">7</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//note that when delete an array of object.</span></span><br><span class="line">Complex* ap = <span class="keyword">new</span> Complex[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">delete</span>[] ap;</span><br><span class="line"></span><br><span class="line"><span class="comment">//should not miss the bracket for it will lead to storage leak.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-placement-new"><a href="#1-2-placement-new" class="headerlink" title="1.2 placement new"></a>1.2 placement new</h3><p>seems we explicitly call the constructor fucntion</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span>(pc)<span class="built_in">Complex</span>(<span class="number">1</span>,<span class="number">2</span>); <span class="comment">//pc represent a pointer, followed by call of constructor.</span></span><br></pre></td></tr></table></figure>
+
+
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/02/04/learn-CPP-storage-from-scratch/" data-id="cltraxlj10001zsfw3hgo83x8" data-title="learn CPP storage from scratch" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-面经注解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/01/13/%E9%9D%A2%E7%BB%8F%E6%B3%A8%E8%A7%A3/" class="article-date">
@@ -121,7 +225,7 @@
 <li><p>new开辟空间时，compiler会为我们计算空间大小。malloc()需要我们手动计算并指定。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span>* <span class="title">malloc</span><span class="params">(<span class="type">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>new&#x2F;delete</strong>被允许重载, malloc不被允许重载   </p>
+<li><p><strong>new&#x2F;delete</strong>被允许重载, malloc不被允许重载(该错误已于2024.02.04被修正)<br> <strong>new&#x2F;delete</strong>是表达式，而::operator new()和::operator delete()本质上是函数，可以被重载   </p>
 </li>
 <li><p>new内存分配失败的时候，抛出<strong>bad_alloc</strong>异常 ,malloc分配内存失败时返回NULL。</p>
 </li>
@@ -367,7 +471,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
     </div>
   </div>
 
@@ -380,6 +484,14 @@
       <ul>
         
           <li>
+            <a href="/2024/03/14/HCI-revision-notebook/">HCI revision notebook</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/04/learn-CPP-storage-from-scratch/">learn CPP storage from scratch</a>
+          </li>
+        
+          <li>
             <a href="/2024/01/13/%E9%9D%A2%E7%BB%8F%E6%B3%A8%E8%A7%A3/">面经注解</a>
           </li>
         
@@ -389,10 +501,6 @@
         
           <li>
             <a href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/">Use Kruskal &amp; Prim to solve &#39;Min cost to connect all points&#39; problem</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/21/CPPtutorial/">My notebook for CPP Tutorial</a>
           </li>
         
       </ul>

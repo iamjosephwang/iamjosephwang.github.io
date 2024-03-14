@@ -14,7 +14,7 @@
 <meta property="og:description" content="0.struct 和 class有什么区别唯一区别是默认的可访问范围不同  struct默认为public class默认为private  1.什么是菱形继承多个类继承自一个基类，同时上述提到的多个派生类又被一个类继承 12345678910111213141516171819class Base &#123;    public:    Base()&#123;&#125;    ~Base">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-01-13T20:01:21.000Z">
-<meta property="article:modified_time" content="2024-01-22T20:40:27.383Z">
+<meta property="article:modified_time" content="2024-02-04T11:15:49.889Z">
 <meta property="article:author" content="Joseph Wang">
 <meta name="twitter:card" content="summary">
   
@@ -123,7 +123,7 @@
 <li><p>new开辟空间时，compiler会为我们计算空间大小。malloc()需要我们手动计算并指定。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span>* <span class="title">malloc</span><span class="params">(<span class="type">size_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>new&#x2F;delete</strong>被允许重载, malloc不被允许重载   </p>
+<li><p><strong>new&#x2F;delete</strong>被允许重载, malloc不被允许重载(该错误已于2024.02.04被修正)<br> <strong>new&#x2F;delete</strong>是表达式，而::operator new()和::operator delete()本质上是函数，可以被重载   </p>
 </li>
 <li><p>new内存分配失败的时候，抛出<strong>bad_alloc</strong>异常 ,malloc分配内存失败时返回NULL。</p>
 </li>
@@ -186,6 +186,15 @@
     
 <nav id="article-nav">
   
+    <a href="/2024/02/04/learn-CPP-storage-from-scratch/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          learn CPP storage from scratch
+        
+      </div>
+    </a>
+  
   
     <a href="/2023/09/29/numpy-learning-from-scratch/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
@@ -235,7 +244,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
     </div>
   </div>
 
@@ -248,6 +257,14 @@
       <ul>
         
           <li>
+            <a href="/2024/03/14/HCI-revision-notebook/">HCI revision notebook</a>
+          </li>
+        
+          <li>
+            <a href="/2024/02/04/learn-CPP-storage-from-scratch/">learn CPP storage from scratch</a>
+          </li>
+        
+          <li>
             <a href="/2024/01/13/%E9%9D%A2%E7%BB%8F%E6%B3%A8%E8%A7%A3/">面经注解</a>
           </li>
         
@@ -257,10 +274,6 @@
         
           <li>
             <a href="/2022/09/15/Use-Kruskal-Prim-to-solve-Min-cost-to-connect-all-points-problem/">Use Kruskal &amp; Prim to solve &#39;Min cost to connect all points&#39; problem</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/21/CPPtutorial/">My notebook for CPP Tutorial</a>
           </li>
         
       </ul>
