@@ -96,7 +96,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <hr>
-<h3 id="01-01-What-is-big-data"><a href="#01-01-What-is-big-data" class="headerlink" title="01-01 What is big data"></a>01-01 What is big data</h3><h4 id="1-background"><a href="#1-background" class="headerlink" title="1.background"></a>1.background</h4><p>Data whose capturing, storage, curation, management, and processing are not possible with traditional tool within tolerable amount of time.</p>
+<h2 id="week1-lecture"><a href="#week1-lecture" class="headerlink" title="week1 lecture"></a>week1 lecture</h2><h3 id="01-01-What-is-big-data"><a href="#01-01-What-is-big-data" class="headerlink" title="01-01 What is big data"></a>01-01 What is big data</h3><h4 id="1-background"><a href="#1-background" class="headerlink" title="1.background"></a>1.background</h4><p>Data whose capturing, storage, curation, management, and processing are not possible with traditional tool within tolerable amount of time.</p>
 <ol>
 <li>Defined by Use:<br> “<strong>capturing, storage, curation, management</strong>“ - refers to how we store and access it.</li>
 </ol>
@@ -219,6 +219,87 @@
 <li>Seamless Transition:</li>
 <li>Load Balancing<br> use keyword ‘server meshing’ to find more detailed information in my chatbar.</li>
 </ol>
+<h4 id="1-Where-can-compute-parallelism-happen"><a href="#1-Where-can-compute-parallelism-happen" class="headerlink" title="1. Where can compute parallelism happen?"></a>1. Where can compute parallelism happen?</h4><ol>
+<li>Within a CPU core:<br> can process multiple instructions simultaneously due to pipeline and superscalar support</li>
+</ol>
+<ul>
+<li><p>Pipelining: split the processor datapath into multiple successive stages with instructions moving through each stage sequentially.</p>
+</li>
+<li><p>Superscalar: Processors that house multiple copies of certain commonly used components.(arithmetic logic units)</p>
+</li>
+</ul>
+<ol start="2">
+<li>Across CPU cores:</li>
+</ol>
+<ul>
+<li>exposed to programmers as ‘threads’</li>
+</ul>
+<ol start="3">
+<li>Across CPU cores in different machines</li>
+</ol>
+<ul>
+<li>Tasks are typically compiled and then sent to a machine with some data to execute on that task</li>
+</ul>
+<h4 id="2-Hardware-classification-for-CPUs"><a href="#2-Hardware-classification-for-CPUs" class="headerlink" title="2. Hardware classification for CPUs"></a>2. Hardware classification for CPUs</h4><ul>
+<li><p><strong>SISD</strong> - serial computer</p>
+</li>
+<li><p><strong>MIMD</strong> - collections of autonomous processors that can execute multiple independent programs, each of which can have its own data stream. modern CPUs</p>
+</li>
+<li><p><strong>SIMD</strong> - Data is divided among the processors and each data item is subjected to the same sequence of instructions. </p>
+</li>
+<li><p><strong>MISD</strong> - rare</p>
+</li>
+</ul>
+<h4 id="3-use-speed-up-linear-speed-up-to-evaluate-the-parallelism-effectiveness"><a href="#3-use-speed-up-linear-speed-up-to-evaluate-the-parallelism-effectiveness" class="headerlink" title="3. use speed-up, linear speed-up to evaluate the parallelism effectiveness"></a>3. use speed-up, linear speed-up to evaluate the parallelism effectiveness</h4><ul>
+<li>parallelism time &#x2F; serial time</li>
+</ul>
+<h2 id="week2-lecture"><a href="#week2-lecture" class="headerlink" title="week2 lecture"></a>week2 lecture</h2><h3 id="02-01-Compute-Callenges"><a href="#02-01-Compute-Callenges" class="headerlink" title="02-01 Compute Callenges"></a>02-01 Compute Callenges</h3><h4 id="1-Data-spliting-and-Load-Balancing"><a href="#1-Data-spliting-and-Load-Balancing" class="headerlink" title="1. Data spliting and Load Balancing"></a>1. Data spliting and Load Balancing</h4><ul>
+<li><p>To enable parallelism, we need to split our data into n chunks. n tend to be greater than the number of parallel ‘pipelines’ we have</p>
+</li>
+<li><p>to make effective use of resources, we want each pipeline to have the same amount of work to do.</p>
+</li>
+</ul>
+<h4 id="2-Communication-and-Intermediate-Storage-overheads"><a href="#2-Communication-and-Intermediate-Storage-overheads" class="headerlink" title="2. Communication and Intermediate Storage overheads"></a>2. Communication and Intermediate Storage overheads</h4><p>As we add more tasks and stages to our system, we have more communication links between those tasks<br> whether it could be a problems depends on how data transfer between tasks</p>
+<ul>
+<li>if both tasks are hosted on the same physical machine, the cost of this will depend on storage speed </li>
+<li>if on different machines, we should consider to add network transfer time</li>
+</ul>
+<h4 id="3-Master-service"><a href="#3-Master-service" class="headerlink" title="3. Master service"></a>3. Master service</h4><ul>
+<li>we need software to create the tasks</li>
+<li>we call these master services</li>
+<li>A master service is responsible for allocating tasks to machine<br> physical machine has a number of slots on it, which can be plugged into tasks.</li>
+</ul>
+<p> <img src="/../img/BD_week2_master_service.png" alt="Master Service"><br>need to consider:</p>
+<ol>
+<li>Fault tolerance<br> What happens if machine fails to mid processing?</li>
+</ol>
+<p> We should ideally re-allocate the work to a new machine<br> refers to:</p>
+<ol>
+<li><p>get a fresh copy of the data to be processed</p>
+</li>
+<li><p>restart the tasks<br> orchestrated by the master service. </p>
+</li>
+<li><p>master failure</p>
+</li>
+<li><p>Network failure</p>
+</li>
+</ol>
+<h3 id="02-02-MapReduce"><a href="#02-02-MapReduce" class="headerlink" title="02-02 MapReduce"></a>02-02 MapReduce</h3><p>Why work distribution is challenging:</p>
+<ul>
+<li>overheads</li>
+<li>load balancing</li>
+<li>orchestration</li>
+</ul>
+<p>solution to all of these problems known as Mapreduce</p>
+<p><a target="_blank" rel="noopener" href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf">Simplified Data Processing on large clusters</a></p>
+<p><img src="/../img/BD_week2_MapReduce_count_example.png" alt="MapReduce for counting example"></p>
+<p>Note that in map step, we generally gather the data using a brand new key, and for each key generate the corresponding lists, that is</p>
+<p>‘’’java<br>    &lt;key1, value1&gt; -&gt; &lt;key2, List <value2>&gt;</p>
+<pre><code>or &lt;key1, value1&gt; -&gt; &lt;key2, value2&gt;
+</code></pre>
+<p>‘’’</p>
+<p>In reduce step, we need to collect values or value lists for separate key.</p>
+<p>‘’’<br>    &lt;key2, List<value2>&gt; -&gt; value3<br>    &lt;key2, List<value2>&gt; -&gt; List<value3><br>‘’’</p>
 <hr>
 
       
