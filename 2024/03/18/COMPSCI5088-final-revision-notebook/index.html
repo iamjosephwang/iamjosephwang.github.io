@@ -13,10 +13,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="01-01 What is big data1.backgroundData whose capturing, storage, curation, management, and processing are not possible with traditional tool within tolerable amount of time.  Defined by Use: “capturi">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/BD_week1_usecase00.png">
 <meta property="article:published_time" content="2024-03-18T21:52:25.000Z">
-<meta property="article:modified_time" content="2024-03-19T16:04:23.478Z">
+<meta property="article:modified_time" content="2024-03-19T18:49:03.982Z">
 <meta property="article:author" content="Joseph Wang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/BD_week1_usecase00.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,6 +153,56 @@
 <li><p>individual machines are physically connected to central routers&#x2F;switches</p>
 </li>
 </ul>
+<h3 id="01-03-User-Needs"><a href="#01-03-User-Needs" class="headerlink" title="01-03 User Needs"></a>01-03 User Needs</h3><h4 id="1-Three-main-Big-data-use-cases"><a href="#1-Three-main-Big-data-use-cases" class="headerlink" title="1. Three main Big data use-cases"></a>1. Three main Big data use-cases</h4><ol>
+<li>Extraction&#x2F;Filtering</li>
+<li>Transformation</li>
+<li>Aggregation - refers to merge a set of data items</li>
+</ol>
+<h4 id="2-Batch-vs-Streaming"><a href="#2-Batch-vs-Streaming" class="headerlink" title="2. Batch vs. Streaming"></a>2. Batch vs. Streaming</h4><p>consider whether we are working with largely static data, or new adta is arriving over time</p>
+<ul>
+<li><p>Static Data: Tackled with batch processing, where large blocks of that data are analysed at once, usually with multiple blocks being processed concurrently, that are subsequently merged together.<br> Cares about completetion time</p>
+</li>
+<li><p>Stream Data: Tackled with Stream processing, where items are processed individually within a pipeline of stages, where multiple items can be processed concurrently within the pipeline<br> Cares bout processing latency per items</p>
+</li>
+<li><p>Stream Processing</p>
+</li>
+</ul>
+<ol>
+<li>Continuous data streams:</li>
+</ol>
+<ul>
+<li>Stream processing deals with data that arrives continuously and may have no inherent end</li>
+<li>data stream can come from various sources</li>
+</ul>
+<ol start="2">
+<li>Real-time Processing:</li>
+</ol>
+<ul>
+<li>aims to process data in real-time  or with minimal latency</li>
+<li>enables organization to react swiftly to changing conditions, make timely decisions, and take immediate actions.</li>
+</ul>
+<ol start="3">
+<li>Event-Driven Architecture:</li>
+</ol>
+<ul>
+<li>built on event-driven architecture, where events trigger actions or processes.</li>
+<li>Events represent meaningful occurences or changes in the data stream.</li>
+</ul>
+<ol start="4">
+<li>Stateful Processing</li>
+</ol>
+<ul>
+<li>Stream processing may involve maintaining stateful computations over time, where the processing logic depends on the history of events.</li>
+<li>Stateful processing allows for more sophisticated analysis and pattern recognition</li>
+</ul>
+<ol start="5">
+<li>Scalability and Fault Tolerance:</li>
+</ol>
+<ul>
+<li>Stream processing systems must be scalable to handle high-volume data streams efficiently.</li>
+<li>They should also be fault-tolerant, capable of recovering from failures and ensuring that no data is lost or duplicated during processing.</li>
+</ul>
+<p><img src="/../img/BD_week1_usecase00.png" alt="Examples about use-cases"></p>
 <hr>
 
       
