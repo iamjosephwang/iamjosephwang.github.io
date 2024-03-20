@@ -105,12 +105,17 @@
 <li>by the Software and Hardware available to us<br> “traditional tools”: Software<br> “tolerable amount of time” - refers to ‘<strong>What hardware we have to run that software</strong>‘</li>
 </ol>
 <h4 id="2-Dimension-of-Big-Data"><a href="#2-Dimension-of-Big-Data" class="headerlink" title="2.Dimension of Big Data"></a>2.Dimension of Big Data</h4><ol>
-<li>Volume</li>
-<li>Variety</li>
-<li>Veracity: refers to the reliability and quality of data.</li>
-<li>Velocity: Describes the speed at which data is generated and processed.</li>
+<li><p>Volume</p>
+</li>
+<li><p>Variety</p>
+</li>
+<li><p>Veracity: refers to the reliability and quality of data.</p>
+</li>
+<li><p>Velocity: Describes the speed at which data is generated and processed.</p>
+</li>
+<li><p>Variability:</p>
+</li>
 </ol>
-<p>5.Variability: </p>
 <h3 id="01-02-Hardware-Primer"><a href="#01-02-Hardware-Primer" class="headerlink" title="01-02 Hardware Primer"></a>01-02 Hardware Primer</h3><h4 id="1-Four-aspects-we-need-to-know-about-hardware"><a href="#1-Four-aspects-we-need-to-know-about-hardware" class="headerlink" title="1. Four aspects we need to know about hardware"></a>1. Four aspects we need to know about hardware</h4><h4 id="1-1-General-Purpose-Compute"><a href="#1-1-General-Purpose-Compute" class="headerlink" title="1.1 General Purpose Compute"></a>1.1 General Purpose Compute</h4><ul>
 <li>How quickly the CPU can complete a given task</li>
 <li>CPUs become faster:</li>
@@ -319,7 +324,18 @@
 <p><img src="/../img/BD_week2_move_compute_to_data.png" alt="load compute to data"></p>
 <h4 id="4-Work-distribution-challenges"><a href="#4-Work-distribution-challenges" class="headerlink" title="4.Work distribution challenges"></a>4.Work distribution challenges</h4><p>almost same as Mapreduce</p>
 <p><img src="/../img/BD_week_Hadoop_work_distribution_challenge.png" alt="work distribution challenges w.r.t Hadoop"></p>
-<h2 id="week3-Lecture"><a href="#week3-Lecture" class="headerlink" title="week3 Lecture"></a>week3 Lecture</h2><h3 id="03-01-Hadoop-Execution"><a href="#03-01-Hadoop-Execution" class="headerlink" title="03-01 Hadoop Execution"></a>03-01 Hadoop Execution</h3><p>for the detailed informaton about execution in Hadoop, just scan through the slides.<br><img src="https://moodle.gla.ac.uk/pluginfile.php/6883110/mod_resource/content/2/03-01-HadoopExecution.pdf" alt="execution in Hadoop"></p>
+<h2 id="week3-Lecture"><a href="#week3-Lecture" class="headerlink" title="week3 Lecture"></a>week3 Lecture</h2><h3 id="03-01-Hadoop-Execution"><a href="#03-01-Hadoop-Execution" class="headerlink" title="03-01 Hadoop Execution"></a>03-01 Hadoop Execution</h3><h4 id="1-Execution-streamline"><a href="#1-Execution-streamline" class="headerlink" title="1.Execution streamline"></a>1.Execution streamline</h4><p>for the detailed informaton about execution in Hadoop, just scan through the slides.</p>
+<h4 id="2-Input-splitting"><a href="#2-Input-splitting" class="headerlink" title="2.Input splitting"></a>2.Input splitting</h4><h4 id="3-Task-Assignment"><a href="#3-Task-Assignment" class="headerlink" title="3.Task Assignment"></a>3.Task Assignment</h4><p><strong>speculative execution:</strong></p>
+<p>idle task trackers are identified using Job tracker-task tracker heartbeats.</p>
+<ul>
+<li><p>If the JobTracker detects that a task is progressing significantly slower than other similar tasks (e.g., due to hardware issues, resource contention, or other factors), it marks that task as a candidate for speculative execution.</p>
+</li>
+<li><p>the JobTracker launches a duplicate or speculative task on another node in the cluster.</p>
+</li>
+<li><p>The speculative task performs the same computation as the original task but runs independently and in parallel with the original task.</p>
+</li>
+</ul>
+<p><strong>Note:</strong> use keyword ‘speculative task’ to fetch more details in my chatbar.</p>
 <hr>
 
       
