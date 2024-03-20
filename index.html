@@ -294,10 +294,7 @@
 <p><a target="_blank" rel="noopener" href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf">Simplified Data Processing on large clusters</a></p>
 <p><img src="/../img/BD_week2_MapReduce_count_example.png" alt="MapReduce for counting example"></p>
 <p>Note that in map step, we generally gather the data using a brand new key, and for each key generate the corresponding lists, that is</p>
-<p>‘’’java<br>    &lt;key1, value1&gt; -&gt; &lt;key2, List <value2>&gt;</p>
-<pre><code>or &lt;key1, value1&gt; -&gt; &lt;key2, value2&gt;
-</code></pre>
-<p>‘’’</p>
+<p>‘’’java<br>    &lt;key1, value1&gt; -&gt; &lt;key2, List <value2>&gt;<br>    &lt;key1, value1&gt; -&gt; &lt;key2, value2&gt;<br>‘’’</p>
 <p>In reduce step, we need to collect values or value lists for separate key.</p>
 <p>‘’’<br>    &lt;key2, List<value2>&gt; -&gt; value3<br>    &lt;key2, List<value2>&gt; -&gt; List<value3><br>‘’’</p>
 <hr>
