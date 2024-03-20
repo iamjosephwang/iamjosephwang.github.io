@@ -16,8 +16,13 @@
 <meta property="og:image" content="http://example.com/img/BD_week1_usecase00.png">
 <meta property="og:image" content="http://example.com/img/BD_week2_master_service.png">
 <meta property="og:image" content="http://example.com/img/BD_week2_MapReduce_count_example.png">
+<meta property="og:image" content="http://example.com/img/BD_week2_MapReduce_read_write.png">
+<meta property="og:image" content="http://example.com/img/BD_week2_Hadoop_architecture.png">
+<meta property="og:image" content="http://example.com/img/BD_week2_move_compute_to_data.png">
+<meta property="og:image" content="http://example.com/img/BD_week_Hadoop_work_distribution_challenge.png">
+<meta property="og:image" content="https://moodle.gla.ac.uk/pluginfile.php/6883110/mod_resource/content/2/03-01-HadoopExecution.pdf">
 <meta property="article:published_time" content="2024-03-18T21:52:25.000Z">
-<meta property="article:modified_time" content="2024-03-20T11:58:06.662Z">
+<meta property="article:modified_time" content="2024-03-20T15:51:38.244Z">
 <meta property="article:author" content="Joseph Wang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/img/BD_week1_usecase00.png">
@@ -299,12 +304,33 @@
 <p>solution to all of these problems known as Mapreduce</p>
 <p><a target="_blank" rel="noopener" href="https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf">Simplified Data Processing on large clusters</a></p>
 <p><img src="/../img/BD_week2_MapReduce_count_example.png" alt="MapReduce for counting example"></p>
-<p>Note that in map step, we generally gather the data using a brand new key, and for each key generate the corresponding lists, that is</p>
-<p>‘’’java<br>    &lt;key1, value1&gt; -&gt; &lt;key2, List <value2>&gt;<br>    &lt;key1, value1&gt; -&gt; &lt;key2, value2&gt;</p>
+<p>Note that in map step, we generally gather the data using a brand new key, and for each key generate the corresponding lists, that is we do data extraction,filtering, and transformation in this stage.</p>
+<p>‘’’java<br>    &lt;key1, value1&gt; -&gt; &lt;key2, List <value2>&gt;<br>    &lt;key1, value1&gt; -&gt; &lt;key2, value2&gt;  </p>
 <p>‘’’</p>
-<p>In reduce step, we need to collect values or value lists for separate key.</p>
-<p>‘’’java<br>    &lt;key2, List<value2>&gt; -&gt; value3<br>    &lt;key2, List<value2>&gt; -&gt; List<value3></p>
+<p>In reduce step, we need to collect values or value lists for separate key.<br>That is we do aggregation in this stage.<br>‘’’java<br>    &lt;key2, List<value2>&gt; -&gt; value3<br>    &lt;key2, List<value2>&gt; -&gt; List<value3></p>
 <p>‘’’</p>
+<p>MapReduce: write and read<br>data gets re-organized and then stored in intermediate stage.<br><img src="/../img/BD_week2_MapReduce_read_write.png" alt="intermediate storage:read and write"></p>
+<h3 id="02-03-Hadoop-basics"><a href="#02-03-Hadoop-basics" class="headerlink" title="02-03 Hadoop basics"></a>02-03 Hadoop basics</h3><h4 id="1-Hadoop-architecture"><a href="#1-Hadoop-architecture" class="headerlink" title="1. Hadoop architecture"></a>1. Hadoop architecture</h4><h5 id="1-1-Hadoop-Compute"><a href="#1-1-Hadoop-Compute" class="headerlink" title="1.1 Hadoop Compute"></a>1.1 Hadoop Compute</h5><ul>
+<li><p><strong>Client:</strong> users use to sumbit work to the Hadoop cluster, can communicate with the Job tracker</p>
+</li>
+<li><p><strong>Job Tracker:</strong> Receives work from the client, uses the Name Node to identify where data is located, assigns work to task trackers</p>
+</li>
+<li><p><strong>Task tracker:</strong> Execute Map and Reduce tasks</p>
+</li>
+</ul>
+<h5 id="1-2-Hadoop-HDFS"><a href="#1-2-Hadoop-HDFS" class="headerlink" title="1.2 Hadoop HDFS"></a>1.2 Hadoop HDFS</h5><ul>
+<li><p><strong>NameNode:</strong> maintains metadata, tracks the location of all resources on HDFS, and handls replication.</p>
+</li>
+<li><p><strong>Data Node:</strong> handles storage and access of the local files on the machine.</p>
+</li>
+</ul>
+<p><img src="/../img/BD_week2_Hadoop_architecture.png" alt="Hadoop and HDFS architecture"></p>
+<h4 id="2-Overheads-in-Hadoop-Mapreduce"><a href="#2-Overheads-in-Hadoop-Mapreduce" class="headerlink" title="2.Overheads in Hadoop Mapreduce"></a>2.Overheads in Hadoop Mapreduce</h4><p>HDFS read before ‘Reduce’ stage inloves Network latency as data gets shuffled accross machines.</p>
+<h4 id="3-Data-Locality"><a href="#3-Data-Locality" class="headerlink" title="3.Data Locality"></a>3.Data Locality</h4><p>move the compute to data</p>
+<p><img src="/../img/BD_week2_move_compute_to_data.png" alt="load compute to data"></p>
+<h4 id="4-Work-distribution-challenges"><a href="#4-Work-distribution-challenges" class="headerlink" title="4.Work distribution challenges"></a>4.Work distribution challenges</h4><p>almost same as Mapreduce</p>
+<p><img src="/../img/BD_week_Hadoop_work_distribution_challenge.png" alt="work distribution challenges w.r.t Hadoop"></p>
+<h2 id="week3-Lecture"><a href="#week3-Lecture" class="headerlink" title="week3 Lecture"></a>week3 Lecture</h2><h3 id="03-01-Hadoop-Execution"><a href="#03-01-Hadoop-Execution" class="headerlink" title="03-01 Hadoop Execution"></a>03-01 Hadoop Execution</h3><p>for the detailed informaton about execution in Hadoop, just scan through the slides.<br><img src="https://moodle.gla.ac.uk/pluginfile.php/6883110/mod_resource/content/2/03-01-HadoopExecution.pdf" alt="execution in Hadoop"></p>
 <hr>
 
       
