@@ -364,6 +364,23 @@
 </li>
 </ul>
 <h4 id="4-Complex-failure-types"><a href="#4-Complex-failure-types" class="headerlink" title="4. Complex failure types"></a>4. Complex failure types</h4><p><img src="/../img/BD_week3_Hadoop_Failure_types.png" alt="more on Hadoop failure types"></p>
+<h3 id="03-03-Issues-with-Hadoops"><a href="#03-03-Issues-with-Hadoops" class="headerlink" title="03-03 Issues with Hadoops"></a>03-03 Issues with Hadoops</h3><h4 id="1-Small-files"><a href="#1-Small-files" class="headerlink" title="1. Small files"></a>1. Small files</h4><p>each file will be assigned with a separate block entry in the name node, which means the name node index would be overloaded if we have very large numbers of files.</p>
+<p>can be overcome using:</p>
+<ul>
+<li>merging small files together</li>
+<li>using HAR files</li>
+<li>using Hbase, we’ll cover this in week8 lecture (08-01 Big Table and 08-02 HBase)</li>
+</ul>
+<h4 id="2-Speed-and-Latency"><a href="#2-Speed-and-Latency" class="headerlink" title="2. Speed and Latency"></a>2. Speed and Latency</h4><p>due to small and expensive main memory and no caching</p>
+<h4 id="3-Cost-of-Chaining-Map-and-Reduce"><a href="#3-Cost-of-Chaining-Map-and-Reduce" class="headerlink" title="3. Cost of Chaining Map and Reduce"></a>3. Cost of Chaining Map and Reduce</h4><p>Hadoop developers did not actually make it easy or fast to chain MapReduce pairs in sequence. In that case, data needs to be written to disk and then re-read between each link in the chain.</p>
+<h4 id="other-Use-Cases-cannot-be-covered-by-Hadoop"><a href="#other-Use-Cases-cannot-be-covered-by-Hadoop" class="headerlink" title="other Use-Cases cannot be covered by Hadoop"></a>other Use-Cases cannot be covered by Hadoop</h4><ul>
+<li><p>applications that need to share state across instances of a task</p>
+</li>
+<li><p>All streaming use-cases</p>
+</li>
+<li><p>Appllication with significant side-affects????</p>
+</li>
+</ul>
 <hr>
 
       
