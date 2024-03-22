@@ -338,6 +338,32 @@
 <p><strong>Note:</strong> use keyword ‘speculative task’ to fetch more details in my chatbar.</p>
 <h3 id="03-02-Hadoop-extras"><a href="#03-02-Hadoop-extras" class="headerlink" title="03-02 Hadoop extras"></a>03-02 Hadoop extras</h3><h4 id="1-Distributed-cache"><a href="#1-Distributed-cache" class="headerlink" title="1. Distributed cache"></a>1. Distributed cache</h4><p>Small files can be an issue, as HDFS can only read full blocks at a time.</p>
 <p><strong>Aternative method:</strong> use distributed cache to share files between job trackers and task trackers</p>
+<ul>
+<li><p>Read-Only</p>
+</li>
+<li><p>can be used for jars, text, archives, conf files, etc</p>
+</li>
+<li><p>jars, lib can be added to the task’s classpath</p>
+</li>
+<li><p>Files are copied only once per job to each task tracker</p>
+</li>
+<li><p>can be used as a ‘hack’ to share state across tasks</p>
+</li>
+<li><p>can be private or public</p>
+</li>
+</ul>
+<h4 id="2-Counters"><a href="#2-Counters" class="headerlink" title="2. Counters"></a>2. Counters</h4><p>we would liket to track the progress of tasks, and Hadoop allows tasks to create and update numerical counters at run-time that are periodically shared with the Job trackers.</p>
+<p>support both built-in and user-defined counters.</p>
+<h4 id="3-Compression"><a href="#3-Compression" class="headerlink" title="3.Compression"></a>3.Compression</h4><p>Due to the high cost of read&#x2F;write w.r.t HDFS, it is highly recommended that data is compressed.</p>
+<ul>
+<li><p>Less I&#x2F;Os across the dataset contributes to higher throughput.</p>
+</li>
+<li><p>More data per HDFS block&#x2F; partition contributs to lower storage&#x2F;network overhead</p>
+</li>
+<li><p>incur additional CPU cost for decompression.</p>
+</li>
+</ul>
+<h4 id="4-Complex-failure-types"><a href="#4-Complex-failure-types" class="headerlink" title="4. Complex failure types"></a>4. Complex failure types</h4><p><img src="/../img/BD_week3_Hadoop_Failure_types.png" alt="more on Hadoop failure types"></p>
 <hr>
 
       
