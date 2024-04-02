@@ -14,7 +14,7 @@
 <meta property="og:description" content="0.struct 和 class有什么区别唯一区别是默认的可访问范围不同  struct默认为public class默认为private  1.什么是菱形继承多个类继承自一个基类，同时上述提到的多个派生类又被一个类继承 12345678910111213141516171819class Base &#123;    public:    Base()&#123;&#125;    ~Base">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-01-13T20:01:21.000Z">
-<meta property="article:modified_time" content="2024-02-04T11:15:49.889Z">
+<meta property="article:modified_time" content="2024-04-02T18:10:42.811Z">
 <meta property="article:author" content="Joseph Wang">
 <meta name="twitter:card" content="summary">
   
@@ -171,6 +171,16 @@
 <li>由于没有this指针的开销，静态成员函数与类的全局函数相比速度更快</li>
 <li>拷贝构造函数的问题。在使用包含静态成员的类的时候，有时候调用拷贝构造函数会生成临时的隐藏对象，而该对象消亡时调用析构函数有可能会对静态变量操作(比如total_sum–)，造成错误。解决方案是为该类写一个拷贝构造函数，完成(total_sum–)操作。</li>
 </ol>
+<h3 id="9-C-lambda"><a href="#9-C-lambda" class="headerlink" title="9.C++ lambda"></a>9.C++ lambda</h3><p>完整的lambda模板如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ capture-list ] ( params ) <span class="built_in">mutable</span>(optional) <span class="built_in">exception</span>(optional) <span class="built_in">attribute</span>(optional) -&gt; <span class="built_in">ret</span>(optional) &#123; body &#125; </span><br><span class="line"><span class="comment">//mutable 表示是否允许对捕获变量造成修改</span></span><br><span class="line"><span class="comment">//params 表示传参列表</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>捕获方式包括值和引用捕获，C++14支持捕获列表初始化(值，引用(不会带来拷贝)，指针)<br>特别的，不会捕获全局变量和static变量</p>
+<p>default capture:</p>
+<ol>
+<li>[&#x3D;]表示按值捕获可见范围内全部局部变量</li>
+<li>[&amp;]表示按引用捕获可见范围内全部的局部变量</li>
+</ol>
+<p>按值捕获的类型为const，欲修改按值捕获的变量，需要使用mutable关键字<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=C++%20lambda&search_source=History&utm_content=search_history&type=content">来源于zhihu</a></p>
 <hr>
 
       
