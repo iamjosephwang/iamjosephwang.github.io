@@ -381,6 +381,68 @@
 <li><p>Appllication with significant side-affects????</p>
 </li>
 </ul>
+<h2 id="week5-Lecture"><a href="#week5-Lecture" class="headerlink" title="week5 Lecture"></a>week5 Lecture</h2><h3 id="05-02-Distributed-Storage"><a href="#05-02-Distributed-Storage" class="headerlink" title="05-02 Distributed Storage"></a>05-02 Distributed Storage</h3><p>What do you expect of a file system?</p>
+<ol>
+<li>a namespace(filenames, directory names, etc)</li>
+<li>format(How the files are actually organized)</li>
+<li>index(mappings from filenames to physical address)</li>
+<li>read&#x2F;write path and API implementation</li>
+</ol>
+<p>What is distributed data<br>Distributed storage exists for the same reason that distributed compute exists.</p>
+<ul>
+<li>need more hardware capacity</li>
+<li>would like to distribute our available storage media across physical machines. </li>
+<li>most bd app are performed via the distributed file system.</li>
+</ul>
+<p>Motivation for the distributed storage.</p>
+<ul>
+<li><p>Resiliency</p>
+</li>
+<li><p>Speed</p>
+</li>
+<li><p>Scalability: Like ‘horizontal scaling’ in compute, we can theoretically infinitely scale storage in a horizontal manner.</p>
+</li>
+<li><p>Data Locality: if data is replicated to multiple locations, then we will often be able to schedule<br>work close to that data</p>
+</li>
+</ul>
+<p>No best solution for distributed storage, just make a trade-off between:</p>
+<ul>
+<li>Reliability</li>
+<li>Availability</li>
+<li>Performance</li>
+<li>Capacity</li>
+</ul>
+<p>OneDrive Example: all the issues and ways this can go wrong.</p>
+<h3 id="05-03-NFS"><a href="#05-03-NFS" class="headerlink" title="05-03 NFS"></a>05-03 NFS</h3><p>follows a client-server architecture</p>
+<ul>
+<li>Servers keep the files</li>
+<li>clients read&#x2F;write the files.</li>
+</ul>
+<p>most operating systems have <strong>software file management layer</strong></p>
+<ul>
+<li>allows for read&#x2F;write process from devices of different format.</li>
+<li>Virtual File System</li>
+<li>allows clients to mirror file directory held on the other machines.</li>
+</ul>
+<p>NFS server side:</p>
+<ul>
+<li><strong>stateless:</strong></li>
+<li><strong>Locking:</strong></li>
+</ul>
+<p><strong>Mounting</strong><br>The user can request that an NFS client mirror a specified remote directory exposed by an NFS server</p>
+<p>NFS Mounting is a multi-stage process</p>
+<ul>
+<li><p>The client first requests the mount port number from the portmap service on the NFS server</p>
+</li>
+<li><p>The client pings the specified port on the server to make sure its live</p>
+</li>
+<li><p>The client then makes a mount request to the server, getting the file handle for the file system</p>
+</li>
+<li><p>The client connects to the port using the file handle and requests the information about the file system</p>
+</li>
+<li><p>Multiple machines can mount the same file system<br> Parallel reads allowed, but not parallel writes</p>
+</li>
+</ul>
 <hr>
 
       
